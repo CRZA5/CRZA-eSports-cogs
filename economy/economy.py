@@ -420,7 +420,7 @@ class Economy:
         server = author.server
         id = author.id
         if self.bank.account_exists(author):
-            roles = [r.name for r in user.roles]
+            roles = [r.name for r in author.roles]
             if "Propayday" in roles:
                 if id in self.payday_register[server.id]:
                     seconds = abs(self.payday_register[server.id][
