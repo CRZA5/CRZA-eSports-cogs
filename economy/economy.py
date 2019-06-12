@@ -14,8 +14,8 @@ import logging
 import random
 
 default_settings = {"PAYDAY_TIME": 1500, "PAYDAY_CREDITS": 300,
-                    "RARE_CREDITS": 360, "EPIC_CREDITS": 360,
-                    "LEGENDARY_CREDITS": 360, "PRO_TIME": 600,
+                    "RARE_CREDITS": 360, "EPIC_CREDITS": 410,
+                    "LEGENDARY_CREDITS": 450, "PRO_TIME": 600,
                     "SLOT_MIN": 5, "SLOT_MAX": 100, "SLOT_TIME": 0,
                     "REGISTER_CREDITS": 1000}
 
