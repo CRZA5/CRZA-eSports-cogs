@@ -175,7 +175,7 @@ class shop:
             message.content = "{}lvladmin bg setcustombg profile {} {}".format(ctx.prefix, author.id, imgurLink)
             message.author = discord.utils.get(ctx.message.server.members)
 
-            await self.bot.process_commands(message)
+            await self.bot.process_commands(message.content)
 
             bank = self.bot.get_cog('Economy').bank
             bank.withdraw_credits(author, 75000)
