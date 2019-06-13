@@ -131,7 +131,7 @@ class shop:
         """ Buy Payday Pro from the shop """
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236"]
+        legendServer = ["567325025649033236", "583896331706433537"]
 
         if server.id not in legendServer:
             return await self.bot.say("This command can only be executed in the CRZAeSports Server")
@@ -155,7 +155,7 @@ class shop:
         Example command: !buy 2 https://i.imgur.com/2Oc5E9K.jpg"""
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236"]
+        legendServer = ["567325025649033236", "583896331706433537"]
 
         if server.id not in legendServer:
             return await self.bot.say("This command can only be executed in the CRZAeSports Server")
@@ -188,7 +188,7 @@ class shop:
 
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236"]
+        legendServer = ["567325025649033236", "583896331706433537"]
 
         if server.id not in legendServer:
             return await self.bot.say("This command can only be executed in the CRZAeSports Server")
@@ -224,7 +224,7 @@ class shop:
 
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236"]
+        legendServer = ["567325025649033236", "583896331706433537"]
 
         if server.id not in legendServer:
             return await self.bot.say("This command can only be executed in the CRZAeSports Server")
@@ -239,7 +239,7 @@ class shop:
         """ Buy Rare Role from the shop """
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236"]
+        legendServer = ["567325025649033236", "583896331706433537"]
 
         if server.id not in legendServer:
             return await self.bot.say("This command can only be executed in the CRZAeSports Server")
@@ -264,7 +264,7 @@ class shop:
         """ Buy Epic Role from the shop """
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236"]
+        legendServer = ["567325025649033236", "583896331706433537"]
 
         if server.id not in legendServer:
             return await self.bot.say("This command can only be executed in the LeGeND Family Server")
@@ -295,7 +295,7 @@ class shop:
 
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236"]
+        legendServer = ["567325025649033236", "583896331706433537"]
 
         if server.id not in legendServer:
             return await self.bot.say("This command can only be executed in the LeGeND Family Server")
@@ -324,7 +324,7 @@ class shop:
 
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236"]
+        legendServer = ["567325025649033236", "583896331706433537"]
 
         if server.id not in legendServer:
             return await self.bot.say("This command can only be executed in the LeGeND Family Server")
