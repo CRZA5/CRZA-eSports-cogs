@@ -8,3 +8,4 @@ Check his repos for these cogs on public use- https://github.com/Weirdo914/Weird
 
  * **Donate** - Add a donate command for your members to help support you.
  * **Economy** - Advanced Economy Cog.
+ * **Coaching** - Help players get bettter by coaching.
