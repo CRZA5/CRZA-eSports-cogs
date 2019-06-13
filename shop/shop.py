@@ -173,7 +173,7 @@ class shop:
 
             message = ctx.message
             message.content = "{}lvladmin bg setcustombg profile {} {}".format(ctx.prefix, author.id, imgurLink)
-            message.author = discord.utils.get(ctx.message.server.members, id="461633827157311490")
+            message.author = discord.utils.get(ctx.message.server.members, id="425991701681930260")
 
             await self.bot.process_commands(message)
 
