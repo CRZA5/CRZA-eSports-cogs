@@ -202,7 +202,7 @@ class shop:
             return await self.bot.say("Error, That's not an emoji I recognize.")
 
         if self.bank_check(author, 80000):
-            ign = profiledata.name
+            ign = author.name
             if ign is None:
                 await self.bot.say("Error, Cannot add emoji.")
             else:
@@ -230,7 +230,7 @@ class shop:
             return await self.bot.say("This command can only be executed in the CRZAeSports Server")
 
         if self.bank_check(author, 90000):
-            await self.bot.say("Please contact @★Cpt_Dark™★#6019 to purchase it for you.")
+            await self.bot.say("Please contact Crza™ Modmail to purchase it.")
         else:
             await self.bot.say("You do not have enough credits to buy this item.")
 
@@ -330,7 +330,7 @@ class shop:
             return await self.bot.say("This command can only be executed in the LeGeND Family Server")
 
         if self.bank_check(author, 4000000):
-            await self.bot.say("please contact Crza™ Modmail to purchase it for you.")
+            await self.bot.say("please contact Crza™ Modmail to purchase it.")
         else:
             await self.bot.say("You do not have enough credits to buy Nitro.")
 
