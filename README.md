@@ -1,7 +1,7 @@
 # CRZA-eSports-cogs
 
 # Private Use
-Cogs used by CRZAeSports for their server. If you want u can use but it hasbeen modified according to our use.
+Cogs used by CRZAeSports for their server. If you want u can use but it has been modified according to our need.
 And all the cogs belong to Weirdo914.
 Check his repos for these cogs on public use- https://github.com/Weirdo914/Weird-Cogs/
 ## Cogs
