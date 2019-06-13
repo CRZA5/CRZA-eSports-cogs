@@ -19,7 +19,6 @@ default_settings = {"PAYDAY_TIME": 1500, "PAYDAY_CREDITS": 300,
                     "SLOT_MIN": 5, "SLOT_MAX": 100, "SLOT_TIME": 0,
                     "REGISTER_CREDITS": 1000}
 
-
 class EconomyError(Exception):
     pass
 
