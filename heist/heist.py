@@ -563,10 +563,10 @@ class Heist:
         wait_time = settings["Config"]["Wait Time"]
         heist_role = discord.utils.get(server.roles, name="Heist")
         heist_channel = discord.utils.get(ctx.message.server.channels, name="heist")
-        heistPlan_channl = discord.Object(id='391382712499568641')
+        heistPlan_channl = discord.Object(id='567403926257926172')
 
         await self.bot.edit_role(server, heist_role, mentionable=True)
-        await self.bot.send_message(heistPlan_channel, ("**Weekly Grand** {} "
+        await self.bot.send_message(heistPlan_channl, ("**Weekly Grand** {} "
                                                        "is going to start in an hour.".format(heist_role.mention)))
         await self.bot.edit_role(server, heist_role, mentionable=False)
 
@@ -575,14 +575,14 @@ class Heist:
         await asyncio.sleep(3000)
 
         await self.bot.edit_role(server, heist_role, mentionable=True)
-        await self.bot.send_message(heistPlan_channel, ("**Weekly Grand** {}"
+        await self.bot.send_message(heistPlan_channl, ("**Weekly Grand** {}"
                                                        " is going to start in 10 minutes.".format(heist_role.mention)))
         await self.bot.edit_role(server, heist_role, mentionable=False)
 
         await asyncio.sleep(540)
 
         await self.bot.edit_role(server, heist_role, mentionable=True)
-        await self.bot.send_message(heistPlan_channel, ("**Weekly Grand** {} "
+        await self.bot.send_message(heistPlan_channl, ("**Weekly Grand** {} "
                                                        "is going to start in 60 seconds. "
                                                        "We have set the gather time to **10 minutes**, "
                                                        "prepare and bring your friends to {}.".format(heist_role.mention,
