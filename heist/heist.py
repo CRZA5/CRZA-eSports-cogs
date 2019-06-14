@@ -19,8 +19,8 @@ from __main__ import send_cmd_help
 from tabulate import tabulate
 
 
-creditIcon = "https://i.imgur.com/TP8GXZb.png"
-credits = "Bot by GR8 | Titan"
+crediticon = "https://i.imgur.com/YqLKAzg.png"
+credits = "Bot By Crza Esports"
 
 BOTCOMMANDER_ROLES = ["Family Representative", "Clan Manager", "admin", "Heist Manager", "admin"]
 
