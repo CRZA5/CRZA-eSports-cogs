@@ -173,7 +173,7 @@ class shop:
 
             message = ctx.message
             message.content = "{}lvladmin bg setcustombg profile {} {}".format(ctx.prefix, author.id, imgurLink)
-            message.author = discord.utils.get(ctx.message.server.members, id="461633827157311490")
+            message.author = discord.utils.get(ctx.message.server.members, id="425991701681930260")
 
             await self.bot.process_commands(message)
 
@@ -189,15 +189,21 @@ class shop:
         server = ctx.message.server
         author = ctx.message.author
 
-        await self.bot.say("Where would like the emoji to be in your name?\nReply with-\n**1** for Adding the emoji at start of your name(Cost- 50000 credits)\n**2** for Adding the emoji at the end of your name(Cost- 50000 credits)\n**3** for Adding emoji both at start and end of your name(Cost- 80000 credits)")
-        reply = await self.bot.wait_for_message(author=author, timeout=120)
-        if reply is None:
-            await self.bot.say("You took to long to answer. If you want to buy start over by typing {}buy 2".format(ctx.prefix))
+        await self.bot.say("Where would like the emoji to be in your name?\nReply with-\n**1** for Adding the emoji at start of your name. (Cost- 50000 credits)\n**2** for Adding the emoji at the end of your name. (Cost- 50000 credits)\n**3** for Adding emoji both at start and end of your name. (Cost- 80000 credits)")
+        num = await self.bot.wait_for_message(author=author, timeout=120)
+        reply = num.content
+        if num is None:
+            await self.bot.say("You took to long to answer. If you want to buy start over by typing {}buy 3".format(ctx.prefix))
         elif reply == "1":
             await self.bot.say("What would you like the emoji to be?")
-            emoji = await self.bot.wait_for_message(author=author, timeout=120)
+            emo = await self.bot.wait_for_message(author=author, timeout=120)
+            emoji = emo.content
 
-            if (emoji.startswith("<:") and emoji.endswith(">")) or (emoji.startswith("<a:") and emoji.endswith(">")):
+            if emo is None:
+                await self.bot.say(
+                    "You took too long to reply. Cancelling the process. If you want to buy run {}buy 3 again.".format(
+                        ctx.prefix))
+            elif (emoji.startswith("<:") and emoji.endswith(">")) or (emoji.startswith("<a:") and emoji.endswith(">")):
                 return await self.bot.say("Error, you can only use default emojis.")
 
             try:
@@ -225,7 +231,13 @@ class shop:
 
         elif reply == "2":
             await self.bot.say("What would you like the emoji to be?")
-            emoji = await self.bot.wait_for_message(author=author, timeout=120)
+            emo = await self.bot.wait_for_message(author=author, timeout=120)
+            emoji = emo.content
+
+            if emo is None:
+                await self.bot.say(
+                    "You took too long to reply. Cancelling the process. If you want to buy run {}buy 3 again.".format(
+                        ctx.prefix))
 
             if (emoji.startswith("<:") and emoji.endswith(">")) or (emoji.startswith("<a:") and emoji.endswith(">")):
                 return await self.bot.say("Error, you can only use default emojis.")
@@ -252,10 +264,16 @@ class shop:
                         bank.withdraw_credits(author, 50000)
             else:
                 await self.bot.say("You do not have enough credits to buy this item.")
-                
+
         elif reply == "3":
             await self.bot.say("What would you like the emoji to be?")
-            emoji = await self.bot.wait_for_message(author=author, timeout=120)
+            emo = await self.bot.wait_for_message(author=author, timeout=120)
+            emoji = emo.content
+
+            if emo is None:
+                await self.bot.say(
+                    "You took too long to reply. Cancelling the process. If you want to buy run {}buy 3 again.".format(
+                        ctx.prefix))
 
             if (emoji.startswith("<:") and emoji.endswith(">")) or (emoji.startswith("<a:") and emoji.endswith(">")):
                 return await self.bot.say("Error, you can only use default emojis.")
@@ -271,7 +289,7 @@ class shop:
                     await self.bot.say("Error, Cannot add emoji.")
                 else:
                     try:
-                        newname = "{} {} ()".format(emoji, ign, emoji)
+                        newname = "{} {} {}".format(emoji, ign, emoji)
                         await self.bot.change_nickname(author, newname)
                     except discord.HTTPException:
                         await self.bot.say("I don’t have permission to change nick for this user.")
@@ -282,7 +300,7 @@ class shop:
                         bank.withdraw_credits(author, 80000)
             else:
                 await self.bot.say("You do not have enough credits to buy this item.")
-            
+
     @buy.command(pass_context=True, name="4")
     async def buy_4(self, ctx):
 
@@ -294,7 +312,30 @@ class shop:
             return await self.bot.say("This command can only be executed in the CRZAeSports Server")
 
         if self.bank_check(author, 90000):
-            await self.bot.say("Please contact Crza™ Modmail to purchase it.")
+            await self.bot.say("What do you want the command to be?\n`{}command` Instead of command there will be you name.\nEnter your name or !command in which it will be triggered.\n(Note- It should be a part of your name in server.)".format(ctx.prefix))
+            name = await self.bot.wait_for_message(author=author, timeout=60)
+            currentname = author.name
+
+            if name is None:
+                await self.bot.say("You took too long to reply. Cancelling the process. If you want to buy run {}buy 4 again.".format(ctx.prefix))
+            elif name.content.lower() in currentname.lower():
+                com = name.content
+                await self.bot.say("What do you want the bot to say when someone types !'urusername' or !'urcommand'?")
+                msg = await self.bot.wait_for_message(author=author, timeout=120)
+                if msg is None:
+                    await self.bot.say("You took too long to reply. Cancelling the process. If you want to buy run {}buy 4 again.".format(ctx.prefix))
+                else:
+                    cont = msg.content
+                    message = ctx.message
+                    message.content = "{}customcom add {} {}".format(ctx.prefix, com, cont)
+                    message.author = discord.utils.get(ctx.message.server.members, id="425991701681930260")
+
+                    await self.bot.process_commands(message)
+
+                    bank = self.bot.get_cog('Economy').bank
+                    bank.withdraw_credits(author, 75000)
+            else:
+                await self.bot.say("The name you entered is not a part of your username in the server. If you want something else conatact CRZA™ Modmail")
         else:
             await self.bot.say("You do not have enough credits to buy this item.")
 
