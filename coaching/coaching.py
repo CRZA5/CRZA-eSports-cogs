@@ -4,8 +4,8 @@ import asyncio
 
 BOTCOMMANDER_ROLES = ["Mod", "admin", "Member"]
 
-icon = "https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png"
-credit = "Bot by Weirdo914"
+icon = "https://i.imgur.com/YqLKAzg.png"
+credit = "Bot by CRZA eSports"
 
 class coaching:
   
