@@ -173,7 +173,7 @@ class shop:
 
             message = ctx.message
             message.content = "{}lvladmin bg setcustombg profile {} {}".format(ctx.prefix, author.id, imgurLink)
-            message.author = discord.utils.get(ctx.message.server.members, id="425991701681930260")
+            message.author = discord.utils.get(ctx.message.server.members, id="461633827157311490")
 
             await self.bot.process_commands(message)
 
@@ -184,41 +184,105 @@ class shop:
             await self.bot.say("You do not have enough credits to buy this item.")
 
     @buy.command(pass_context=True, name="3")
-    async def buy_3(self, ctx, emoji):
+    async def buy_3(self, ctx):
 
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236", "583896331706433537"]
 
-        if server.id not in legendServer:
-            return await self.bot.say("This command can only be executed in the CRZAeSports Server")
+        await self.bot.say("Where would like the emoji to be in your name?\nReply with-\n**1** for Adding the emoji at start of your name(Cost- 50000 credits)\n**2** for Adding the emoji at the end of your name(Cost- 50000 credits)\n**3** for Adding emoji both at start and end of your name(Cost- 80000 credits)")
+        reply = await self.bot.wait_for_message(author=author, timeout=120)
+        if reply is None:
+            await self.bot.say("You took to long to answer. If you want to buy start over by typing {}buy 2".format(ctx.prefix))
+        elif reply == "1":
+            await self.bot.say("What would you like the emoji to be?")
+            emoji = await self.bot.wait_for_message(author=author, timeout=120)
 
-        if (emoji.startswith("<:") and emoji.endswith(">")) or (emoji.startswith("<a:") and emoji.endswith(">")):
-            return await self.bot.say("Error, you can only use default emojis.")
+            if (emoji.startswith("<:") and emoji.endswith(">")) or (emoji.startswith("<a:") and emoji.endswith(">")):
+                return await self.bot.say("Error, you can only use default emojis.")
 
-        try:
-            await self.bot.add_reaction(ctx.message, emoji)
-        except (discord.errors.HTTPException, discord.errors.InvalidArgument):
-            return await self.bot.say("Error, That's not an emoji I recognize.")
+            try:
+                await self.bot.add_reaction(ctx.message, emoji)
+            except (discord.errors.HTTPException, discord.errors.InvalidArgument):
+                return await self.bot.say("Error, That's not an emoji I recognize.")
 
-        if self.bank_check(author, 80000):
-            ign = author.name
-            if ign is None:
-                await self.bot.say("Error, Cannot add emoji.")
-            else:
-                try:
-                    newname = "{} {}".format(ign, emoji)
-                    await self.bot.change_nickname(author, newname)
-                except discord.HTTPException:
-                    await self.bot.say("I don’t have permission to change nick for this user.")
+            if self.bank_check(author, 50000):
+                ign = author.name
+                if ign is None:
+                    await self.bot.say("Error, Cannot add emoji.")
                 else:
-                    await self.bot.say("Nickname changed to ** {} **\n".format(newname))
+                    try:
+                        newname = "{} {}".format(emoji, ign)
+                        await self.bot.change_nickname(author, newname)
+                    except discord.HTTPException:
+                        await self.bot.say("I don’t have permission to change nick for this user.")
+                    else:
+                        await self.bot.say("Nickname changed to ** {} **\n".format(newname))
 
-                    bank = self.bot.get_cog('Economy').bank
-                    bank.withdraw_credits(author, 80000)
-        else:
-            await self.bot.say("You do not have enough credits to buy this item.")
+                        bank = self.bot.get_cog('Economy').bank
+                        bank.withdraw_credits(author, 50000)
+            else:
+                await self.bot.say("You do not have enough credits to buy this item.")
 
+        elif reply == "2":
+            await self.bot.say("What would you like the emoji to be?")
+            emoji = await self.bot.wait_for_message(author=author, timeout=120)
+
+            if (emoji.startswith("<:") and emoji.endswith(">")) or (emoji.startswith("<a:") and emoji.endswith(">")):
+                return await self.bot.say("Error, you can only use default emojis.")
+
+            try:
+                await self.bot.add_reaction(ctx.message, emoji)
+            except (discord.errors.HTTPException, discord.errors.InvalidArgument):
+                return await self.bot.say("Error, That's not an emoji I recognize.")
+
+            if self.bank_check(author, 50000):
+                ign = author.name
+                if ign is None:
+                    await self.bot.say("Error, Cannot add emoji.")
+                else:
+                    try:
+                        newname = "{} {}".format(ign, emoji)
+                        await self.bot.change_nickname(author, newname)
+                    except discord.HTTPException:
+                        await self.bot.say("I don’t have permission to change nick for this user.")
+                    else:
+                        await self.bot.say("Nickname changed to ** {} **\n".format(newname))
+
+                        bank = self.bot.get_cog('Economy').bank
+                        bank.withdraw_credits(author, 50000)
+            else:
+                await self.bot.say("You do not have enough credits to buy this item.")
+                
+        elif reply == "3":
+            await self.bot.say("What would you like the emoji to be?")
+            emoji = await self.bot.wait_for_message(author=author, timeout=120)
+
+            if (emoji.startswith("<:") and emoji.endswith(">")) or (emoji.startswith("<a:") and emoji.endswith(">")):
+                return await self.bot.say("Error, you can only use default emojis.")
+
+            try:
+                await self.bot.add_reaction(ctx.message, emoji)
+            except (discord.errors.HTTPException, discord.errors.InvalidArgument):
+                return await self.bot.say("Error, That's not an emoji I recognize.")
+
+            if self.bank_check(author, 80000):
+                ign = author.name
+                if ign is None:
+                    await self.bot.say("Error, Cannot add emoji.")
+                else:
+                    try:
+                        newname = "{} {} ()".format(emoji, ign, emoji)
+                        await self.bot.change_nickname(author, newname)
+                    except discord.HTTPException:
+                        await self.bot.say("I don’t have permission to change nick for this user.")
+                    else:
+                        await self.bot.say("Nickname changed to ** {} **\n".format(newname))
+
+                        bank = self.bot.get_cog('Economy').bank
+                        bank.withdraw_credits(author, 80000)
+            else:
+                await self.bot.say("You do not have enough credits to buy this item.")
+            
     @buy.command(pass_context=True, name="4")
     async def buy_4(self, ctx):
 
