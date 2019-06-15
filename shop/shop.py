@@ -293,7 +293,7 @@ class shop:
                     await self.bot.say("Error, Cannot add emoji.")
                 else:
                     try:
-                        newname = "{} {} ()".format(emoji, ign, emoji)
+                        newname = "{} {} {}".format(emoji, ign, emoji)
                         await self.bot.change_nickname(author, newname)
                     except discord.HTTPException:
                         await self.bot.say("I don’t have permission to change nick for this user.")
