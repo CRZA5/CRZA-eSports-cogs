@@ -435,10 +435,25 @@ class shop:
             return await self.bot.say("This command can only be executed in the LeGeND Family Server")
 
         if self.bank_check(author, 4000000):
-            await self.bot.say("please contact Crza™ Modmail to purchase it.")
+            await self.bot.say("Please contact Crza™ Modmail to purchase it.")
         else:
             await self.bot.say("You do not have enough credits to buy Nitro.")
 
+    @buy.command(pass_context=True, name="9")
+    async def buy_9(self, ctx):
+
+        server = ctx.message.server
+        author = ctx.message.author
+        legendServer = ["567325025649033236", "583896331706433537"
+        reqchannel = discord.utils.get(server.channels, name="profilepic-request")
+
+        if server.id not in legendServer:
+            return await self.bot.say("This command can only be executed in the LeGeND Family Server")
+
+        if self.bank_check(author, 20000):
+            await self.bot.say('**If You want to Buy a Avatar please head over to {} and see pinned message**. Request there and say with your message I want to buy 9.** Thank You!**'.format(reqchannel.mention))
+        else:
+            await self.bot.say("You do not have enough credits to buy avatar.")
 
 def setup(bot):
     bot.add_cog(shop(bot))
