@@ -8,6 +8,7 @@ from PIL import Image
 import re
 import os
 import aiohttp
+import logging
 
 
 class shop:
@@ -146,6 +147,7 @@ class shop:
             bank.withdraw_credits(author, 30000)
             await self._add_roles(author, ["Propayday"])
             await self.bot.say("Congratulations, now you can get !payday every 10 minutes.")
+            logger.info("{}({}) bought Propayday role.".format(author.name, author.id))
         else:
             await self.bot.say("You do not have enough credits to buy this item.")
 
@@ -176,9 +178,11 @@ class shop:
             message.author = discord.utils.get(ctx.message.server.members, id="425991701681930260")
 
             await self.bot.process_commands(message)
+            await self.bot.say("You have successfully bought a custom background image for profile." )
 
             bank = self.bot.get_cog('Economy').bank
             bank.withdraw_credits(author, 75000)
+            logger.info("{}({}) bought background for profile(!buy 2).".format(author.name, author.id))
 
         else:
             await self.bot.say("You do not have enough credits to buy this item.")
@@ -223,9 +227,9 @@ class shop:
                         await self.bot.say("I don’t have permission to change nick for this user.")
                     else:
                         await self.bot.say("Nickname changed to ** {} **\n".format(newname))
-
                         bank = self.bot.get_cog('Economy').bank
                         bank.withdraw_credits(author, 50000)
+                        logger.info( "{}({}) bought emoji at name start(!buy 3 opt- 1).".format( author.name, author.id ) )
             else:
                 await self.bot.say("You do not have enough credits to buy this item.")
 
@@ -259,9 +263,9 @@ class shop:
                         await self.bot.say("I don’t have permission to change nick for this user.")
                     else:
                         await self.bot.say("Nickname changed to ** {} **\n".format(newname))
-
                         bank = self.bot.get_cog('Economy').bank
                         bank.withdraw_credits(author, 50000)
+                        logger.info( "{}({}) bought emoji at name end(!buy 3 opt- 2).".format( author.name, author.id ) )
             else:
                 await self.bot.say("You do not have enough credits to buy this item.")
 
@@ -289,15 +293,15 @@ class shop:
                     await self.bot.say("Error, Cannot add emoji.")
                 else:
                     try:
-                        newname = "{} {} {}".format(emoji, ign, emoji)
+                        newname = "{} {} ()".format(emoji, ign, emoji)
                         await self.bot.change_nickname(author, newname)
                     except discord.HTTPException:
                         await self.bot.say("I don’t have permission to change nick for this user.")
                     else:
                         await self.bot.say("Nickname changed to ** {} **\n".format(newname))
-
                         bank = self.bot.get_cog('Economy').bank
                         bank.withdraw_credits(author, 80000)
+                        logger.info( "{}({}) bought emoji at both start and end of name(!buy 3 opt- 2.".format( author.name, author.id ) )
             else:
                 await self.bot.say("You do not have enough credits to buy this item.")
 
@@ -318,7 +322,7 @@ class shop:
 
             if name is None:
                 await self.bot.say("You took too long to reply. Cancelling the process. If you want to buy run {}buy 4 again.".format(ctx.prefix))
-            elif name.content.lower() in currentname.lower():
+            elif name.content.lower() in currentname:
                 com = name.content
                 await self.bot.say("What do you want the bot to say when someone types !'urusername' or !'urcommand'?")
                 msg = await self.bot.wait_for_message(author=author, timeout=120)
@@ -334,6 +338,7 @@ class shop:
 
                     bank = self.bot.get_cog('Economy').bank
                     bank.withdraw_credits(author, 75000)
+                    logger.info( "{}({}) bought custom command(!buy 4)".format( author.name, author.id ) )
             else:
                 await self.bot.say("The name you entered is not a part of your username in the server. If you want something else conatact CRZA™ Modmail")
         else:
@@ -361,6 +366,7 @@ class shop:
             bank.withdraw_credits(author, 250000)
             await self._add_roles(author, ["Rare™"])
             await self.bot.say("Congratulations, you are now a **Rare™**")
+            logger.info("{}({}) bought Rare role(!buy 5).".format(author.name, author.id))
         else:
             await self.bot.say("You do not have enough credits to buy this role.")
 
@@ -391,6 +397,7 @@ class shop:
             await asyncio.sleep(3)
             await self._add_roles(author, ["Epic™"])
             await self.bot.say("Congratulations, you are now a **Epic™**")
+            logger.info("{}({}) bought Epic role(!buy 6).".format(author.name, author.id))
         else:
             await self.bot.say("You do not have enough credits to buy this role.")
 
@@ -421,6 +428,7 @@ class shop:
             await asyncio.sleep(3)
             await self._add_roles(author, ["LeGeNDary™"])
             await self.bot.say("Congratulations, you are now a **LeGeNDary™**")
+            logger.info("{}({}) bought LeGeNDary role(!buy 7).".format(author.name, author.id))
         else:
             await self.bot.say("You do not have enough credits to buy this role.")
 
@@ -444,16 +452,28 @@ class shop:
 
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236", "583896331706433537"
+        legendServer = ["567325025649033236", "583896331706433537"]
         reqchannel = discord.utils.get(server.channels, name="profilepic-request")
+
 
         if server.id not in legendServer:
             return await self.bot.say("This command can only be executed in the LeGeND Family Server")
 
         if self.bank_check(author, 20000):
-            await self.bot.say('**If You want to Buy a Avatar please head over to {} and see pinned message**. Request there and say with your message I want to buy 9.** Thank You!**'.format(reqchannel.mention))
+            await self.bot.say('**If You want to Buy a Avatar please head over to {} and see the pinned message.** Request there and say with your message I want to buy 9.** Thank You!**'.format(reqchannel .mention))
         else:
             await self.bot.say("You do not have enough credits to buy avatar.")
 
+
 def setup(bot):
+    global logger
+    logger = logging.getLogger("red.shop")
+    if logger.level == 0:
+        # Prevents the logger from being loaded again in case of module reload
+        logger.setLevel(logging.INFO)
+        handler = logging.FileHandler(
+            filename='data/shop/shop.log', encoding='utf-8', mode='a')
+        handler.setFormatter(logging.Formatter(
+            '%(asctime)s %(message)s', datefmt="[%d/%m/%Y %H:%M]"))
+        logger.addHandler(handler)
     bot.add_cog(shop(bot))
