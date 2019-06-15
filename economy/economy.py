@@ -431,7 +431,7 @@ class Economy:
                             self.payday_register[server.id][
                                 id] = int(time.perf_counter())
                             await self.bot.say(
-                                "{} Here, take some credits. Enjoy! (+{}"
+                                "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                                 " credits!)".format(
                                     author.mention,
                                     str(self.settings[server.id]["LEGENDARY_CREDITS"])))
@@ -441,7 +441,7 @@ class Economy:
                             self.payday_register[server.id][
                                 id] = int(time.perf_counter())
                             await self.bot.say(
-                                "{} Here, take some credits. Enjoy! (+{}"
+                                "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                                 " credits!)".format(
                                     author.mention,
                                     str(self.settings[server.id]["EPIC_CREDITS"])))
@@ -451,7 +451,7 @@ class Economy:
                             self.payday_register[server.id][
                                 id] = int(time.perf_counter())
                             await self.bot.say(
-                                "{} Here, take some credits. Enjoy! (+{}"
+                                "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                                 " credits!)".format(
                                     author.mention,
                                     str(self.settings[server.id]["RARE_CREDITS"])))
@@ -461,7 +461,7 @@ class Economy:
                             self.payday_register[server.id][
                                 id] = int(time.perf_counter())
                             await self.bot.say(
-                                "{} Here, take some credits. Enjoy! (+{}"
+                                "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                                 " credits!)".format(
                                     author.mention,
                                     str(self.settings[server.id]["PAYDAY_CREDITS"])))
@@ -479,7 +479,7 @@ class Economy:
                         self.payday_register[server.id][
                             id] = int(time.perf_counter())
                         await self.bot.say(
-                            "{} Here, take some credits. Enjoy! (+{}"
+                            "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                             " credits!)".format(
                                 author.mention,
                                 str(self.settings[server.id]["LEGENDARY_CREDITS"])))
@@ -489,7 +489,7 @@ class Economy:
                         self.payday_register[server.id][
                             id] = int(time.perf_counter())
                         await self.bot.say(
-                            "{} Here, take some credits. Enjoy! (+{}"
+                            "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                             " credits!)".format(
                                 author.mention,
                                 str(self.settings[server.id]["EPIC_CREDITS"])))
@@ -499,7 +499,7 @@ class Economy:
                         self.payday_register[server.id][
                             id] = int(time.perf_counter())
                         await self.bot.say(
-                            "{} Here, take some credits. Enjoy! (+{}"
+                            "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                             " credits!)".format(
                                 author.mention,
                                 str(self.settings[server.id]["RARE_CREDITS"])))
@@ -509,7 +509,7 @@ class Economy:
                         self.payday_register[server.id][
                             id] = int(time.perf_counter())
                         await self.bot.say(
-                            "{} Here, take some credits. Enjoy! (+{}"
+                            "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                             " credits!)".format(
                                 author.mention,
                                 str(self.settings[server.id]["PAYDAY_CREDITS"])))
@@ -524,7 +524,7 @@ class Economy:
                             self.payday_register[server.id][
                                 id] = int(time.perf_counter())
                             await self.bot.say(
-                                "{} Here, take some credits. Enjoy! (+{}"
+                                "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                                 " credits!)".format(
                                     author.mention,
                                     str(self.settings[server.id]["LEGENDARY_CREDITS"])))
@@ -534,7 +534,7 @@ class Economy:
                             self.payday_register[server.id][
                                 id] = int(time.perf_counter())
                             await self.bot.say(
-                                "{} Here, take some credits. Enjoy! (+{}"
+                                "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                                 " credits!)".format(
                                     author.mention,
                                     str(self.settings[server.id]["EPIC_CREDITS"])))
@@ -544,7 +544,7 @@ class Economy:
                             self.payday_register[server.id][
                                 id] = int(time.perf_counter())
                             await self.bot.say(
-                                "{} Here, take some credits. Enjoy! (+{}"
+                                "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                                 " credits!)".format(
                                     author.mention,
                                     str(self.settings[server.id]["RARE_CREDITS"])))
@@ -554,7 +554,7 @@ class Economy:
                             self.payday_register[server.id][
                                 id] = int(time.perf_counter())
                             await self.bot.say(
-                                "{} Here, take some credits. Enjoy! (+{}"
+                                "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                                 " credits!)".format(
                                     author.mention,
                                     str(self.settings[server.id]["PAYDAY_CREDITS"])))
@@ -572,7 +572,7 @@ class Economy:
                         self.payday_register[server.id][
                             id] = int(time.perf_counter())
                         await self.bot.say(
-                            "{} Here, take some credits. Enjoy! (+{}"
+                            "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                             " credits!)".format(
                                 author.mention,
                                 str(self.settings[server.id]["LEGENDARY_CREDITS"])))
@@ -582,7 +582,7 @@ class Economy:
                         self.payday_register[server.id][
                             id] = int(time.perf_counter())
                         await self.bot.say(
-                            "{} Here, take some credits. Enjoy! (+{}"
+                            "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                             " credits!)".format(
                                 author.mention,
                                 str(self.settings[server.id]["EPIC_CREDITS"])))
@@ -592,7 +592,7 @@ class Economy:
                         self.payday_register[server.id][
                             id] = int(time.perf_counter())
                         await self.bot.say(
-                            "{} Here, take some credits. Enjoy! (+{}"
+                            "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                             " credits!)".format(
                                 author.mention,
                                 str(self.settings[server.id]["RARE_CREDITS"])))
@@ -602,7 +602,7 @@ class Economy:
                         self.payday_register[server.id][
                             id] = int(time.perf_counter())
                         await self.bot.say(
-                            "{} Here, take some credits. Enjoy! (+{}"
+                            "{} Here, take some credits :credit_card:. Enjoy! (+{}"
                             " credits!)".format(
                                 author.mention,
                                 str(self.settings[server.id]["PAYDAY_CREDITS"])))
