@@ -365,7 +365,7 @@ class shop:
             bank = self.bot.get_cog('Economy').bank
             bank.withdraw_credits(author, 250000)
             await self._add_roles(author, ["Rare™"])
-            await self.bot.say("Congratulations, you are now a **Rare™**")
+            await self.bot.say("Congratulations, you are now **Rare™**")
             logger.info("{}({}) bought Rare role(!buy 5).".format(author.name, author.id))
         else:
             await self.bot.say("You do not have enough credits to buy this role.")
@@ -427,7 +427,7 @@ class shop:
             await self._remove_roles(author, ["Epic™"])
             await asyncio.sleep(3)
             await self._add_roles(author, ["LeGeNDary™"])
-            await self.bot.say("Congratulations, you are now a **LeGeNDary™**")
+            await self.bot.say("Congratulations, you are now **LeGeNDary™**")
             logger.info("{}({}) bought LeGeNDary role(!buy 7).".format(author.name, author.id))
         else:
             await self.bot.say("You do not have enough credits to buy this role.")
