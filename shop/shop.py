@@ -319,10 +319,11 @@ class shop:
             await self.bot.say("What do you want the command to be?\n`{}command` Instead of command there will be you name.\nEnter your name or !command in which it will be triggered.\n(Note- It should be a part of your name in server.)".format(ctx.prefix))
             name = await self.bot.wait_for_message(author=author, timeout=60)
             currentname = author.name
+            await self.bot.say("Your current name in server is {}.".format(currentname))
 
             if name is None:
                 await self.bot.say("You took too long to reply. Cancelling the process. If you want to buy run {}buy 4 again.".format(ctx.prefix))
-            elif name.content.lower() in currentname:
+            elif name.content.lower() in currentname.lower():
                 com = name.content
                 await self.bot.say("What do you want the bot to say when someone types !'urusername' or !'urcommand'?")
                 msg = await self.bot.wait_for_message(author=author, timeout=120)
