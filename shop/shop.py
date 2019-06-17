@@ -216,7 +216,7 @@ class shop:
                 return await self.bot.say("Error, That's not an emoji I recognize.")
 
             if self.bank_check(author, 50000):
-                ign = author.name
+                ign = author.display_name
                 if ign is None:
                     await self.bot.say("Error, Cannot add emoji.")
                 else:
@@ -252,7 +252,7 @@ class shop:
                 return await self.bot.say("Error, That's not an emoji I recognize.")
 
             if self.bank_check(author, 50000):
-                ign = author.name
+                ign = author.display_name
                 if ign is None:
                     await self.bot.say("Error, Cannot add emoji.")
                 else:
@@ -288,7 +288,7 @@ class shop:
                 return await self.bot.say("Error, That's not an emoji I recognize.")
 
             if self.bank_check(author, 80000):
-                ign = author.name
+                ign = author.display_name
                 if ign is None:
                     await self.bot.say("Error, Cannot add emoji.")
                 else:
