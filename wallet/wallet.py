@@ -136,8 +136,8 @@ class Wallet:
             reply = (await self.bot.wait_for_message(channel=channel, author=user, timeout=120))
             if reply is None:
                 return await self.bot.send_message(channel, reg_timeout)
-            elif not reply.content.startswith("#")":
-                return await self.bot.send_message(channel, "Please enter your Tag starting with #. Run the command again to register for wallet")
+            elif reply.content.lower() == "stop":
+                return await self.bot.send_message(channel, reg_stop)
             else:
                 ingame_tag = reply.content
             timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
