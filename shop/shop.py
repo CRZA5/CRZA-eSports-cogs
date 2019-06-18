@@ -337,7 +337,7 @@ class shop:
                     await self.bot.process_commands(message)
 
                     bank = self.bot.get_cog('Economy').bank
-                    bank.withdraw_credits(author, 75000)
+                    bank.withdraw_credits(author, 90000)
                     log = "{}({}) bought custom command(!buy 4)".format(author.name, author.id)
                     logger.info(log)
                     await self.bot.send_message(log_channel, log)
