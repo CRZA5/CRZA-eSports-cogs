@@ -109,6 +109,7 @@ class Wallet:
         server = user.server
         channel = await self.bot.start_private_message(user)
         reg_msg = "**Hello! I will ask you few questions, let's move to DM!**"
+        reg_error = "You have disabled DM's from this bot, so I am doing the registration here\n**Lets start! You can stop anytime by typing \"stop\". Keep in Mind answer the questions properly, do not make funs. or Ban!**\nWhat is your Brawl Stars in-game name?(Reply within 2 minutes)"
         reg_stop = "OK, cancelling Wallet creation. If you still want to create wallet type `!register` in <#569026201419644929>"
         reg_timeout = "You took too long to respond. Cancelling Wallet creation. If you still want to create wallet type `!register` in <#569026201419644929>"
         reg_start = "**Lets start! You can stop anytime by typing \"stop\". Keep in Mind answer the questions properly, do not make funs. or Ban!** "
@@ -120,39 +121,74 @@ class Wallet:
                 balance = self.money.accounts[user.id]["balance"]
             else:
                 balance = 0
-            await self.bot.send_message(ctx.message.channel, reg_start)
-            await asyncio.sleep(3)
-            await self.bot.send_message(ctx.message.channel, "What is your Brawl Stars in-game name?(Reply within 2 minutes)")
-            reply = (await self.bot.wait_for_message(channel=ctx.message.channel, author=user, timeout=120))
-            if reply is None:
-                return await self.bot.send_message(ctx.message.channel, reg_timeout)
-            elif reply.content.lower() == "stop":
-                return await self.bot.send_message(ctx.message.channel, reg_stop)
-            else:
-                ingame_name = reply.content
+            try:
+                await self.bot.send_message(channel, reg_start)
+                await self.bot.send_message(ctx.message.channel, reg_msg)
+                await asyncio.sleep(3)
+                await self.bot.send_message(channel, "What is your Brawl Stars in-game name?(Reply within 2 minutes)")
+                reply = (await self.bot.wait_for_message(channel=channel, author=user, timeout=120))
+                if reply is None:
+                    return await self.bot.send_message(channel, reg_timeout)
+                elif reply.content.lower() == "stop":
+                    return await self.bot.send_message(channel, reg_stop)
+                else:
+                    ingame_name = reply.content
 
-            await self.bot.send_message(ctx.message.channel, "What is your Brawl Stars in-game tag?(Reply within 2 minutes)")
-            reply = (await self.bot.wait_for_message(channel=ctx.message.channel, author=user, timeout=120))
-            if reply is None:
-                return await self.bot.send_message(ctx.message.channel, reg_timeout)
-            elif reply.content.lower() == "stop":
-                return await self.bot.send_message(ctx.message.channel, reg_stop)
-            else:
-                ingame_tag = reply.content
-            timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
-            account = {"name": user.display_name,
-                       "balance": balance,
-                       "created_at": timestamp,
-                       "game_name": ingame_name,
-                       "game_tag": ingame_tag,
-                       "dis_name_tag": str(user),
-                       "dis_id": user.id,
-                       "withdrawn": 0
-                       }
-            self.money.accounts[server.id][user.id] = account
-            self.money._save_bank()
-            await self.bot.send_message(ctx.message.channel, "Created a wallet for you in CRZA eSports.")
-            return
+                await self.bot.send_message(channel, "What is your Brawl Stars in-game tag?(Reply within 2 minutes)")
+                reply = (await self.bot.wait_for_message(channel=channel, author=user, timeout=120))
+                if reply is None:
+                    return await self.bot.send_message(channel, reg_timeout)
+                elif reply.content.lower() == "stop":
+                    return await self.bot.send_message(channel, reg_stop)
+                else:
+                    ingame_tag = reply.content
+                timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+                account = {"name": user.display_name,
+                           "balance": balance,
+                           "created_at": timestamp,
+                           "game_name": ingame_name,
+                           "game_tag": ingame_tag,
+                           "dis_name_tag": str(user),
+                           "dis_id": user.id,
+                           "withdrawn": 0
+                           }
+                self.money.accounts[server.id][user.id] = account
+                self.money._save_bank()
+                await self.bot.send_message(channel, "Created a wallet for you in CRZA eSports.")
+                return
+            except discord.errors.Forbidden:
+                await self.bot.send_message(ctx.message.channel, reg_error)
+                reply = (await self.bot.wait_for_message(channel=ctx.message.channel, author=user, timeout=120))
+                if reply is None:
+                    return await self.bot.send_message(ctx.message.channel, reg_timeout)
+                elif reply.content.lower() == "stop":
+                    return await self.bot.send_message(ctx.message.channel, reg_stop)
+                else:
+                    ingame_name = reply.content
+
+                await self.bot.send_message(ctx.message.channel,
+                                             "What is your Brawl Stars in-game tag?(Reply within 2 minutes)")
+                reply = (await self.bot.wait_for_message(channel=ctx.message.channel, author=user, timeout=120))
+                if reply is None:
+                    return await self.bot.send_message(ctx.message.channel, reg_timeout)
+                elif reply.content.lower() == "stop":
+                    return await self.bot.send_message(ctx.message.channel, reg_stop)
+                else:
+                    ingame_tag = reply.content
+                timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+                account = {"name": user.display_name,
+                           "balance": balance,
+                           "created_at": timestamp,
+                           "game_name": ingame_name,
+                           "game_tag": ingame_tag,
+                           "dis_name_tag": str(user),
+                           "dis_id": user.id,
+                           "withdrawn": 0
+                           }
+                self.money.accounts[server.id][user.id] = account
+                self.money._save_bank()
+                await self.bot.send_message(ctx.message.channel, "Created a wallet for you in CRZA eSports.")
+                return
         else:
             return await self.bot.send_message(ctx.message.channel, "You already have a wallet in CRZA eSports.")
 
