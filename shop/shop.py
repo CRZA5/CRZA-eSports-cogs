@@ -10,6 +10,7 @@ import os
 import aiohttp
 import logging
 
+log_channel = "581757355826348072"
 
 class shop:
     """CRZA Shop for credits"""
@@ -143,7 +144,9 @@ class shop:
             bank.withdraw_credits(author, 30000)
             await self._add_roles(author, ["Propayday"])
             await self.bot.say("Congratulations, now you can get !payday every 10 minutes.")
-            logger.info("{}({}) bought Propayday role.".format(author.name, author.id))
+            log = "{}({}) bought Propayday role.".format(author.name, author.id)
+            logger.info(log)
+            await self.bot.send_message(log_channel, log)
         else:
             await self.bot.say("You do not have enough credits to buy this item.")
 
@@ -170,11 +173,13 @@ class shop:
             message.author = discord.utils.get(ctx.message.server.members, id="425991701681930260")
 
             await self.bot.process_commands(message)
-            await self.bot.say("You have successfully bought a custom background image for profile." )
+            await self.bot.say("You have successfully bought a custom background image for profile.")
 
             bank = self.bot.get_cog('Economy').bank
             bank.withdraw_credits(author, 75000)
-            logger.info("{}({}) bought background for profile(!buy 2).".format(author.name, author.id))
+            log = "{}({}) bought background for profile(!buy 2).".format(author.name, author.id)
+            logger.info(log)
+            await self.bot.send_message(log_channel, log)
 
         else:
             await self.bot.say("You do not have enough credits to buy this item.")
@@ -221,7 +226,9 @@ class shop:
                         await self.bot.say("Nickname changed to ** {} **\n".format(newname))
                         bank = self.bot.get_cog('Economy').bank
                         bank.withdraw_credits(author, 50000)
-                        logger.info( "{}({}) bought emoji at name start(!buy 3 opt- 1).".format( author.name, author.id ) )
+                        log = "{}({}) bought emoji at name start(!buy 3 opt- 1).".format(author.name, author.id)
+                        logger.info(log)
+                        await self.bot.send_message(log_channel, log)
             else:
                 await self.bot.say("You do not have enough credits to buy this item.")
 
@@ -257,7 +264,9 @@ class shop:
                         await self.bot.say("Nickname changed to ** {} **\n".format(newname))
                         bank = self.bot.get_cog('Economy').bank
                         bank.withdraw_credits(author, 50000)
-                        logger.info( "{}({}) bought emoji at name end(!buy 3 opt- 2).".format( author.name, author.id ) )
+                        log = "{}({}) bought emoji at name end(!buy 3 opt- 2).".format(author.name, author.id)
+                        logger.info(log)
+                        await self.bot.send_message(log_channel, log)
             else:
                 await self.bot.say("You do not have enough credits to buy this item.")
 
@@ -293,7 +302,9 @@ class shop:
                         await self.bot.say("Nickname changed to ** {} **\n".format(newname))
                         bank = self.bot.get_cog('Economy').bank
                         bank.withdraw_credits(author, 80000)
-                        logger.info( "{}({}) bought emoji at both start and end of name(!buy 3 opt- 2.".format( author.name, author.id ) )
+                        log = "{}({}) bought emoji at both start and end of name(!buy 3 opt- 2.".format(author.name, author.id)
+                        logger.info(log)
+                        await self.bot.send_message(log_channel, log)
             else:
                 await self.bot.say("You do not have enough credits to buy this item.")
 
@@ -326,7 +337,9 @@ class shop:
 
                     bank = self.bot.get_cog('Economy').bank
                     bank.withdraw_credits(author, 75000)
-                    logger.info( "{}({}) bought custom command(!buy 4)".format( author.name, author.id ) )
+                    log = "{}({}) bought custom command(!buy 4)".format(author.name, author.id)
+                    logger.info(log)
+                    await self.bot.send_message(log_channel, log)
             else:
                 await self.bot.say("The name you entered is not a part of your username in the server. If you want something else conatact CRZA™ Modmail")
         else:
@@ -350,7 +363,9 @@ class shop:
             bank.withdraw_credits(author, 250000)
             await self._add_roles(author, ["Rare™"])
             await self.bot.say("Congratulations, you are now **Rare™**")
-            logger.info("{}({}) bought Rare role(!buy 5).".format(author.name, author.id))
+            log = "{}({}) bought Rare role(!buy 5).".format(author.name, author.id)
+            logger.info(log)
+            await self.bot.send_message(log_channel, log)
         else:
             await self.bot.say("You do not have enough credits to buy this role.")
 
@@ -377,7 +392,9 @@ class shop:
             await asyncio.sleep(3)
             await self._add_roles(author, ["Epic™"])
             await self.bot.say("Congratulations, you are now a **Epic™**")
-            logger.info("{}({}) bought Epic role(!buy 6).".format(author.name, author.id))
+            log = "{}({}) bought Epic role(!buy 6).".format(author.name, author.id)
+            logger.info(log)
+            await self.bot.send_message(log_channel, log)
         else:
             await self.bot.say("You do not have enough credits to buy this role.")
 
@@ -404,7 +421,9 @@ class shop:
             await asyncio.sleep(3)
             await self._add_roles(author, ["LeGeNDary™"])
             await self.bot.say("Congratulations, you are now **LeGeNDary™**")
-            logger.info("{}({}) bought LeGeNDary role(!buy 7).".format(author.name, author.id))
+            log = "{}({}) bought LeGeNDary role(!buy 7).".format(author.name, author.id)
+            logger.info(log)
+            await self.bot.send_message(log_channel, log)
         else:
             await self.bot.say("You do not have enough credits to buy this role.")
 
