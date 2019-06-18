@@ -10,7 +10,7 @@ import os
 import aiohttp
 import logging
 
-log_channel = "581757355826348072"
+log_channel = 581757355826348072
 
 class shop:
     """CRZA Shop for credits"""
