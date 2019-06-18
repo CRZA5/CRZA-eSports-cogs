@@ -12,7 +12,7 @@ import logging
 
 
 class shop:
-    """Legend Family Shop for credits"""
+    """CRZA Shop for credits"""
 
     def __init__(self, bot):
         self.bot = bot
@@ -132,10 +132,6 @@ class shop:
         """ Buy Payday Pro from the shop """
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236", "583896331706433537"]
-
-        if server.id not in legendServer:
-            return await self.bot.say("This command can only be executed in the CRZAeSports Server")
 
         payday = await self._is_payday(author)
 
@@ -157,10 +153,6 @@ class shop:
         Example command: !buy 2 https://i.imgur.com/2Oc5E9K.jpg"""
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236", "583896331706433537"]
-
-        if server.id not in legendServer:
-            return await self.bot.say("This command can only be executed in the CRZAeSports Server")
 
         if self.bank_check(author, 75000):
             pattern = re.compile(r"<?(https?:\/\/)?(www\.)?([i.]*)?(imgur\.com)\b([-a-zA-Z0-9/]*)>?(\.jpg)?")
@@ -310,10 +302,6 @@ class shop:
 
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236", "583896331706433537"]
-
-        if server.id not in legendServer:
-            return await self.bot.say("This command can only be executed in the CRZAeSports Server")
 
         if self.bank_check(author, 90000):
             await self.bot.say("What do you want the command to be?\n`{}command` Instead of command there will be you name.\nEnter your name or !command in which it will be triggered.\n(Note- It should be a part of your name in server.)".format(ctx.prefix))
@@ -349,10 +337,6 @@ class shop:
         """ Buy Rare Role from the shop """
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236", "583896331706433537"]
-
-        if server.id not in legendServer:
-            return await self.bot.say("This command can only be executed in the CRZAeSports Server")
 
         rare = await self._is_rare(author)
         epic = await self._is_epic(author)
@@ -375,10 +359,6 @@ class shop:
         """ Buy Epic Role from the shop """
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236", "583896331706433537"]
-
-        if server.id not in legendServer:
-            return await self.bot.say("This command can only be executed in the LeGeND Family Server")
 
         rare = await self._is_rare(author)
         epic = await self._is_epic(author)
@@ -407,10 +387,6 @@ class shop:
 
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236", "583896331706433537"]
-
-        if server.id not in legendServer:
-            return await self.bot.say("This command can only be executed in the LeGeND Family Server")
 
         epic = await self._is_epic(author)
         legendary = await self._is_legendary(author)
@@ -437,10 +413,6 @@ class shop:
 
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236", "583896331706433537"]
-
-        if server.id not in legendServer:
-            return await self.bot.say("This command can only be executed in the LeGeND Family Server")
 
         if self.bank_check(author, 4000000):
             await self.bot.say("Please contact Crza™ Modmail to purchase it.")
@@ -452,12 +424,7 @@ class shop:
 
         server = ctx.message.server
         author = ctx.message.author
-        legendServer = ["567325025649033236", "583896331706433537"]
         reqchannel = discord.utils.get(server.channels, name="profilepic-request")
-
-
-        if server.id not in legendServer:
-            return await self.bot.say("This command can only be executed in the LeGeND Family Server")
 
         if self.bank_check(author, 20000):
             await self.bot.say('**If You want to Buy a Avatar please head over to {} and see the pinned message.** Request there and say with your message I want to buy 9.** Thank You!**'.format(reqchannel .mention))
