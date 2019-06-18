@@ -158,7 +158,7 @@ class Wallet:
 
     @wallet.command(pass_context=True, no_pm=True)
     async def claim(self, ctx):
-        """Register for a wallet"""
+        """Claim/withdraw your money in the wallet"""
         user = ctx.message.author
         settings = self.check_server_settings(ctx.message.server)
         channel = self.bot.get_channel("590563426753839109")
