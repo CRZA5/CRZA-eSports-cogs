@@ -31,7 +31,7 @@ class academy:
         user = ctx.message.author
         channel = await self.bot.start_private_message(user)
         channel_req = self.bot.get_channel("590010592157237259")
-        server_req = self.bot.get_server("589820265089990665")
+        server_req = self.bot.get_server("567325025649033236")
         coach_role = discord.utils.get(server_req.roles, name="TournamentManager")
 
         await self.bot.send_message(ctx.message.channel, msg_start)
