@@ -1,0 +1,10 @@
+{
+    "AUTHOR" : "Edited By Lionx",
+    "INSTALL_MSG" : "Crza Esports Touenament Manager is added",
+    "NAME" : "register",
+    "SHORT" : "tournament register {incomplete}",
+    "DESCRIPTION" : "tournament register {incomplete}",
+    "TAGS" : ["legend", "management", "register"],
+    "REQUIREMENTS" : [],
+    "HIDDEN" : false
+}
