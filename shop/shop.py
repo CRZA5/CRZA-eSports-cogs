@@ -131,7 +131,7 @@ class shop:
 
     @buy.command(pass_context=True, name="1")
     async def buy_1(self, ctx):
-        """ Buy Payday Pro from the shop """
+        """ Buy Pro Payday from the shop """
         server = ctx.message.server
         author = ctx.message.author
 
