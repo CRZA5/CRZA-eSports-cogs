@@ -97,10 +97,10 @@ class Racer:
                 return random.randint(2, 5) * 3
 
         elif self.mode == 'special':
-            random = random.randint(1, 100)
-            if random >= 80:
+            rco = random.randint(1, 100)
+            if rco >= 80:
                 return 5 * 3
-            elif random <= 20:
+            elif rco <= 20:
                 return 6
             else:
                 return random.randint(1, 2) * 4
