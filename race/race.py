@@ -103,7 +103,7 @@ class Racer:
             elif rco <= 20:
                 return 6
             else:
-                return random.randint(1, 2) * 4
+                return random.randint(1, 2) * 3
 
 
 class Race:
