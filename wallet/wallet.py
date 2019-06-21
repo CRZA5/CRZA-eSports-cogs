@@ -5,6 +5,7 @@ from datetime import datetime
 from copy import deepcopy
 from .utils import checks
 from collections import namedtuple, defaultdict, deque
+from cogs.utils.chat_formatting import pagify, box
 from __main__ import send_cmd_help
 import logging
 import os
@@ -72,6 +73,19 @@ class Money:
         else:
             raise InsufficientBalance()
 
+    def get_server_accounts(self, server):
+        if server.id in self.accounts:
+            raw_server_accounts = deepcopy(self.accounts[server.id])
+            accounts = []
+            for k, v in raw_server_accounts.items():
+                v["id"] = k
+                v["server"] = server
+                acc = self._create_account_obj(v)
+                accounts.append(acc)
+            return accounts
+        else:
+            return []
+
     def _get_account(self, user):
         server = user.server
         try:
@@ -85,6 +99,14 @@ class Money:
     def get_balance(self, user):
         account = self._get_account(user)
         return account["balance"]
+
+    def _create_account_obj(self, account):
+        account["member"] = account["server"].get_member(account["id"])
+        account["created_at"] = datetime.strptime(account["created_at"],
+                                                  "%Y-%m-%d %H:%M:%S")
+        Account = namedtuple("Account", "id name balance "
+                             "created_at withdrawn game_tag dis_name_tag game_name server dis_id member")
+        return Account(**account)
 
 
 class Wallet:
@@ -200,7 +222,7 @@ class Wallet:
         channel = self.bot.get_channel("590563426753839109")
         server_req = self.bot.get_server("581666499907813425")
         manage_role = discord.utils.get(server_req.roles, name="Wallet Claim Manager")
-        req = 30
+        req = 110
         if self.money.account_exists(user):
             bal = settings[user.id]["balance"]
             if bal >= req:
@@ -294,6 +316,34 @@ class Wallet:
                 await self.bot.say(embed=embed)
             else:
                 await self.bot.say("That user has no wallet.")
+
+    @wallet.command(name="leaderboard", pass_context=True)
+    async def leaderboard(self, ctx, top: int=10):
+        """Prints out the server's wallet leaderboard
+
+        Defaults to top 10"""
+        # Originally coded by Airenkun - edited by irdumb
+        server = ctx.message.server
+        if top < 1:
+            top = 10
+        bank_sorted = sorted(self.money.get_server_accounts(server),
+                             key=lambda x: x.balance, reverse=True)
+        bank_sorted = [a for a in bank_sorted if a.member] #  exclude users who left
+        if len(bank_sorted) < top:
+            top = len(bank_sorted)
+        topten = bank_sorted[:top]
+        highscore = ""
+        place = 1
+        for acc in topten:
+            highscore += str(place).ljust(len(str(top)) + 1)
+            highscore += (str(acc.member.display_name) + " ").ljust(23 - len(str(acc.balance)))
+            highscore += str(acc.balance) + "\n"
+            place += 1
+        if highscore != "":
+            for page in pagify(highscore, shorten_by=12):
+                await self.bot.say(box(page, lang="py"))
+        else:
+            await self.bot.say("There are no accounts in the bank.")
 
     @wallet.command(pass_context=True)
     @checks.admin_or_permissions(manage_server=True)
