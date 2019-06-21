@@ -76,7 +76,10 @@ class Racer:
             return random.randint(1, 3) * 3
 
         elif self.mode == 'fast':
-            return random.randint(2, 4) * 3
+            if random.randint(1, 100) >= 75:
+                return random.randint(1, 2) * 3
+            else:
+                return random.randint(2, 4) * 3
 
         elif self.mode == 'steady':
             return 2 * 3
@@ -85,19 +88,22 @@ class Racer:
             if random.randint(1, 100) >= 90:
                 return 5 * 3
             else:
-                return random.randint(0, 2) * 3
+                return random.randint(0, 4) * 3
 
         elif self.mode == 'predator':
             if self.turn % 2 == 0:
-                return 1
+                return 2
             else:
                 return random.randint(2, 5) * 3
 
         elif self.mode == 'special':
-            if random.randint(1, 10) >= 6:
+            random = random.randint(1, 100)
+            if random >= 80:
                 return 5 * 3
+            elif random =< 20:
+                return 6
             else:
-                return random.randint(1, 3) * 4
+                return random.randint(1, 2) * 4
 
 
 class Race:
