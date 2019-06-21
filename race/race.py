@@ -100,7 +100,7 @@ class Racer:
             random = random.randint(1, 100)
             if random >= 80:
                 return 5 * 3
-            elif random =< 20:
+            elif random <= 20:
                 return 6
             else:
                 return random.randint(1, 2) * 4
