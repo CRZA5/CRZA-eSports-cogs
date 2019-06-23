@@ -253,18 +253,18 @@ class Wallet:
         settings = self.check_server_settings(ctx.message.server)
         if not user:
             user = ctx.message.author
-            bal = settings[user.id]["balance"]
             try:
+                bal = settings[user.id]["balance"]
                 await self.bot.say("{} Your wallet balance is: Rs {}".format(user.mention, bal))
-            except NoAccount:
+            except KeyError:
                 await self.bot.say("{} You don't have a wallet in"
                                    " CRZA eSports. Type `{}wallet register`"
                                    " to create one.".format(user.mention, ctx.prefix))
         else:
-            if self.money.account_exists(user):
+            try:
                 bal = settings[user.id]["balance"]
                 await self.bot.say("{}'s wallet's balance is Rs {}".format(user.display_name, bal))
-            else:
+            except KeyError:
                 await self.bot.say("That user has no wallet.")
 
     @wallet.command(pass_context=True)
@@ -274,30 +274,30 @@ class Wallet:
         Defaults to yours."""
         settings = self.check_server_settings(ctx.message.server)
         if not user:
-            user = ctx.message.author
-            withdraw = settings[user.id]["withdrawn"]
-            gamename = settings[user.id]["game_name"]
-            gametag = settings[user.id]["game_tag"]
-            bal = settings[user.id]["balance"]
-            wltime = settings[user.id]["created_at"]
-            embed = discord.Embed(colour=0xff0000)
-            embed.add_field(name="**Name:**", value=user.display_name)
-            embed.add_field(name="**Money in Wallet:**", value="Rs " + str(bal))
-            embed.add_field(name="**Withdrawn Money:**", value="Rs " + str(withdraw))
-            embed.add_field(name="**Discord Username & Tag:**", value=user)
-            embed.add_field(name="**Brawl Stars in-game name:**", value=gamename)
-            embed.add_field(name="**Brawl Stars Tag:**", value=gametag)
-            embed.add_field(name="**Wallet created at:**", value=wltime)
-            embed.title = "**CRZA eSports Wallet**"
-            embed.set_footer(text=credit, icon_url=icon)
             try:
+                user = ctx.message.author
+                withdraw = settings[user.id]["withdrawn"]
+                gamename = settings[user.id]["game_name"]
+                gametag = settings[user.id]["game_tag"]
+                bal = settings[user.id]["balance"]
+                wltime = settings[user.id]["created_at"]
+                embed = discord.Embed(colour=0xff0000)
+                embed.add_field(name="**Name:**", value=user.display_name)
+                embed.add_field(name="**Money in Wallet:**", value="Rs " + str(bal))
+                embed.add_field(name="**Withdrawn Money:**", value="Rs " + str(withdraw))
+                embed.add_field(name="**Discord Username & Tag:**", value=user)
+                embed.add_field(name="**Brawl Stars in-game name:**", value=gamename)
+                embed.add_field(name="**Brawl Stars Tag:**", value=gametag)
+                embed.add_field(name="**Wallet created at:**", value=wltime)
+                embed.title = "**CRZA eSports Wallet**"
+                embed.set_footer(text=credit, icon_url=icon)
                 await self.bot.say(embed=embed)
-            except NoAccount:
+            except KeyError:
                 await self.bot.say("{} You don't have a wallet in"
                                    " CRZA eSports. Type `{}wallet register`"
                                    " to create one.".format(user.mention, ctx.prefix))
         else:
-            if self.money.account_exists(user):
+            try:
                 withdraw = settings[user.id]["withdrawn"]
                 gamename = settings[user.id]["game_name"]
                 gametag = settings[user.id]["game_tag"]
@@ -314,7 +314,7 @@ class Wallet:
                 embed.title = "**CRZA eSports Wallet**"
                 embed.set_footer(text=credit, icon_url=icon)
                 await self.bot.say(embed=embed)
-            else:
+            except KeyError:
                 await self.bot.say("That user has no wallet.")
 
     @wallet.command(name="leaderboard", pass_context=True)
