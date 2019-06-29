@@ -79,7 +79,7 @@ class Racer:
             if random.randint(1, 100) >= 75:
                 return random.randint(1, 2) * 3
             else:
-                return random.randint(2, 4) * 3
+                return random.randint(1, 4) * 3
 
         elif self.mode == 'steady':
             return 2 * 3
