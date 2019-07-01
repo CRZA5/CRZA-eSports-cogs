@@ -131,7 +131,7 @@ class Wallet:
         server = user.server
         channel = await self.bot.start_private_message(user)
         reg_msg = "**Hello! I will ask you few questions, let's move to DM!**"
-        reg_error = "You have disabled DM's from this bot, so I am doing the registration here\n**Lets start! You can stop anytime by typing \"stop\". Keep in Mind answer the questions properly, do not make funs. or Ban!**\nWhat is your Brawl Stars in-game name?(Reply within 2 minutes)"
+        reg_error = "You have disabled DM's from this bot, so I am doing the registration here\n**Lets start! You can stop anytime by typing \"stop\". Keep in Mind answer the questions properly, do not make funs. or Ban!**\nWhat is your Brawl Stars/Clash Royale/Clash of Clans (Enter of The game you play. If you play more than 1 game enter any 1.) in-game name?(Reply within 2 minutes)"
         reg_stop = "OK, cancelling Wallet creation. If you still want to create wallet type `!register` in <#569026201419644929>"
         reg_timeout = "You took too long to respond. Cancelling Wallet creation. If you still want to create wallet type `!register` in <#569026201419644929>"
         reg_start = "**Lets start! You can stop anytime by typing \"stop\". Keep in Mind answer the questions properly, do not make funs. or Ban!** "
@@ -147,7 +147,7 @@ class Wallet:
                 await self.bot.send_message(channel, reg_start)
                 await self.bot.send_message(ctx.message.channel, reg_msg)
                 await asyncio.sleep(3)
-                await self.bot.send_message(channel, "What is your Brawl Stars in-game name?(Reply within 2 minutes)")
+                await self.bot.send_message(channel, "What is your Brawl Stars/Clash Royale/Clash of Clans (Enter of The game you play. If you play more than 1 game enter any 1.) in-game name?(Reply within 2 minutes)")
                 reply = (await self.bot.wait_for_message(channel=channel, author=user, timeout=120))
                 if reply is None:
                     return await self.bot.send_message(channel, reg_timeout)
@@ -156,7 +156,7 @@ class Wallet:
                 else:
                     ingame_name = reply.content
 
-                await self.bot.send_message(channel, "What is your Brawl Stars in-game tag?(Reply within 2 minutes)")
+                await self.bot.send_message(channel, "What is your Brawl Stars/Clash Royale/Clash of Clans (Enter of The game you play. If you play more than 1 game enter any 1.) in-game tag?(Reply within 2 minutes)")
                 reply = (await self.bot.wait_for_message(channel=channel, author=user, timeout=120))
                 if reply is None:
                     return await self.bot.send_message(channel, reg_timeout)
@@ -189,7 +189,7 @@ class Wallet:
                     ingame_name = reply.content
 
                 await self.bot.send_message(ctx.message.channel,
-                                             "What is your Brawl Stars in-game tag?(Reply within 2 minutes)")
+                                             "What is your Brawl Stars/Clash Royale/Clash of Clans (Enter of The game you play. If you play more than 1 game enter any 1.) in-game tag?(Reply within 2 minutes)")
                 reply = (await self.bot.wait_for_message(channel=ctx.message.channel, author=user, timeout=120))
                 if reply is None:
                     return await self.bot.send_message(ctx.message.channel, reg_timeout)
@@ -286,8 +286,8 @@ class Wallet:
                 embed.add_field(name="**Money in Wallet:**", value="Rs " + str(bal))
                 embed.add_field(name="**Withdrawn Money:**", value="Rs " + str(withdraw))
                 embed.add_field(name="**Discord Username & Tag:**", value=user)
-                embed.add_field(name="**Brawl Stars in-game name:**", value=gamename)
-                embed.add_field(name="**Brawl Stars Tag:**", value=gametag)
+                embed.add_field(name="**BS/COC/CR in-game name:**", value=gamename)
+                embed.add_field(name="**BS/COC/CR Tag:**", value=gametag)
                 embed.add_field(name="**Wallet created at:**", value=wltime)
                 embed.title = "**CRZA eSports Wallet**"
                 embed.set_footer(text=credit, icon_url=icon)
