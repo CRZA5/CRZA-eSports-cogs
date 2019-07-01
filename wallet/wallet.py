@@ -308,8 +308,8 @@ class Wallet:
                 embed.add_field(name="**Money in Wallet:**", value="Rs " + str(bal))
                 embed.add_field(name="**Withdrawn Money:**", value="Rs " + str(withdraw))
                 embed.add_field(name="**Discord Username & Tag:**", value=user)
-                embed.add_field(name="**Brawl Stars in-game name:**", value=gamename)
-                embed.add_field(name="**Brawl Stars Tag:**", value=gametag)
+                embed.add_field(name="**BS/COC/CR in-game name:**", value=gamename)
+                embed.add_field(name="**BS/COC/CR Tag:**", value=gametag)
                 embed.add_field(name="**Wallet created at:**", value=wltime)
                 embed.title = "**CRZA eSports Wallet**"
                 embed.set_footer(text=credit, icon_url=icon)
