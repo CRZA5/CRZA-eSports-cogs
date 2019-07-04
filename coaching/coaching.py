@@ -80,12 +80,12 @@ class coaching:
 
                 # Embed Code
         embed = discord.Embed(colour=0xff0000)
-        embed.add_field(name="**Request by:**", value=user)
-        embed.add_field(name="**In-game name:**", value=ingame_name)
-        embed.add_field(name="**Trophies:**", value=trophies)
-        embed.add_field(name="**Wants to Learn:**", value=info)
-        embed.add_field(name="**Time:**", value=time)
-        embed.add_field(name="**Additional Info:**", value=more_info)
+        embed.add_field(name="**Request by:**", value=user, inline=False)
+        embed.add_field(name="**In-game name:**", value=ingame_name, inline=False)
+        embed.add_field(name="**Trophies:**", value=trophies, inline=False)
+        embed.add_field(name="**Wants to Learn:**", value=info, inline=False)
+        embed.add_field(name="**Time:**", value=time, inline=False)
+        embed.add_field(name="**Additional Info:**", value=more_info, inline=False)
         embed.title = "**New Coaching Request**"
         embed.set_footer(text=credit, icon_url=icon)
         await self.bot.send_message(channel_req, content=coach_role.mention + 'Request By: ' + user.mention, embed=embed)
