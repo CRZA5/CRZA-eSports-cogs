@@ -282,13 +282,13 @@ class Wallet:
                 bal = settings[user.id]["balance"]
                 wltime = settings[user.id]["created_at"]
                 embed = discord.Embed(colour=0xff0000)
-                embed.add_field(name="**Name:**", value=user.display_name)
-                embed.add_field(name="**Money in Wallet:**", value="Rs " + str(bal))
-                embed.add_field(name="**Withdrawn Money:**", value="Rs " + str(withdraw))
-                embed.add_field(name="**Discord Username & Tag:**", value=user)
-                embed.add_field(name="**BS/COC/CR in-game name:**", value=gamename)
-                embed.add_field(name="**BS/COC/CR Tag:**", value=gametag)
-                embed.add_field(name="**Wallet created at:**", value=wltime)
+                embed.add_field(name="**Name:**", value=user.display_name, inline=False)
+                embed.add_field(name="**Money in Wallet:**", value="Rs " + str(bal), inline=False)
+                embed.add_field(name="**Withdrawn Money:**", value="Rs " + str(withdraw), inline=False)
+                embed.add_field(name="**Discord Username & Tag:**", value=user, inline=False)
+                embed.add_field(name="**BS/COC/CR in-game name:**", value=gamename, inline=False)
+                embed.add_field(name="**BS/COC/CR Tag:**", value=gametag, inline=False)
+                embed.add_field(name="**Wallet created at:**", value=wltime, inline=False)
                 embed.title = "**CRZA eSports Wallet**"
                 embed.set_footer(text=credit, icon_url=icon)
                 await self.bot.say(embed=embed)
