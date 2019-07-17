@@ -118,7 +118,7 @@ class General:
         finally:
             pass
         avg = (ra + ra1 + ra2 + ra3 +ra4)/5
-        color = returnhex
+        color = returnhex()
 
         e = discord.Embed(title="Advanced Ping", description="Pong! {} ms".format(avg), colour=color)
         e.add_field(name='Ping 1', value=str(ra) + " ms")
