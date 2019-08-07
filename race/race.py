@@ -189,7 +189,7 @@ class Race:
                 (self.emoji('Brock'), 'slow'),
                 (self.emoji('Dynamike'), 'steady'),
                 (self.emoji('Bo'), 'slow'),
-                (self.emoji('El Primo'), 'predator'),
+                (self.emoji('ElPrimo'), 'predator'),
                 (self.emoji('Barley'), 'slow'),
                 (self.emoji('Poco'), 'steady'),
                 (self.emoji('Rosa'), 'predator'),
