@@ -1164,7 +1164,12 @@ def check_folders():
 def check_files():
     f = "data/club/clubs.json"
     if not fileIO(f, "check"):
-        print("Creating empty settings.json...")
+        print("Creating empty clubs.json...")
+        fileIO(f, "save", {})
+
+    f = "data/club/welcome.json"
+    if not fileIO(f, "check"):
+        print("Creating empty welcome.json...")
         fileIO(f, "save", {})
 
     f = "data/club/settings.json"
