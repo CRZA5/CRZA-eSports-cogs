@@ -1127,6 +1127,9 @@ class club:
         print(channel)
         try:
             message = guest_rules + "\n" + commands_text + "\n" + credits_info
+            print( channel )
+            print([channel] )
+            print(channel.id)
             await self.bot.send_message(channel, message)
             await self.bot.say("{} Role Added to {}".format(role.name, member.display_name))
         except discord.errors.Forbidden:
