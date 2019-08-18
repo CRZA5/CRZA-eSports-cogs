@@ -1124,13 +1124,9 @@ class club:
 
         role = discord.utils.get(server.roles, name="Guest")
         channel = await self.bot.start_private_message(member)
-        print(channel)
         try:
             message = guest_rules + "\n" + commands_text + "\n" + credits_info
-            print( channel )
-            print([channel] )
-            print(channel.id)
-            await self.bot.send_message(channel, message)
+            await self.bot.send_message(channel.id, message)
             await self.bot.say("{} Role Added to {}".format(role.name, member.display_name))
         except discord.errors.Forbidden:
             return await self.bot.say("Command failed, {} please fix your privacy settings, we are unable to send you Guest Rules.".format(member.mention))
