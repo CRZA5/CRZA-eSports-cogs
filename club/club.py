@@ -279,9 +279,9 @@ class club:
     def __init__(self, bot):
         self.bot = bot
         self.settings = dataIO.load_json('data/club/settings.json')
-        self.auth = self.bot.get_cog('brawlstats').auth
+        self.auth = self.bot.get_cog('BrawlStats').auth
         self.tags = tags()
-        self.clubs = self.bot.get_cog('crtools').clubs
+        self.clubs = clubs()
         self.brawl = brawlstats.Client(self.auth.getToken(), is_async=False)
         self.welcome = dataIO.load_json('data/club/welcome.json')
         self.bank = dataIO.load_json('data/economy/bank.json')
