@@ -413,7 +413,7 @@ class club:
             embed.set_author(name=self.settings['family'], url=self.settings['url'],
                              icon_url="https://i.imgur.com/dtSMITE.jpg")
         else:
-            embed.set_author(name="Blazing Family Clubs",
+            embed.set_author(name="BLazing Family Clubs",
                              url="https://discord.me/bsindia",
                              icon_url="https://i.imgur.com/5GfHj5o.png")
 
@@ -645,7 +645,7 @@ class club:
         except brawlstats.RequestError as e:
             return await self.bot.say('```\n{}: {}\n```'.format(e.code, e.error))
         except KeyError:
-            return await self.bot.say("You must associate a tag with this member first using ``{}bs save #tag @member``".format(ctx.prefix))
+            return await self.bot.say("You must associate a tag with this member first using ``{}bsave #tag @member``".format(ctx.prefix))
 
         allowed = False
         if member is None:
@@ -1018,7 +1018,7 @@ class club:
                     d_members_not_in_club.append(d_member.display_name)
 
                 try:
-                    if self.seen[server][d_member.id]['TIMESTAMP'] < time.time() - 691200:
+                    if self.seen[legendServer[0]][d_member.id]['TIMESTAMP'] < time.time() - 691200:
                         d_members_inactive.append(d_member.display_name)
                 except:
                     pass
@@ -1123,9 +1123,8 @@ class club:
             return await self.bot.say("I don’t have permission to change nick for this user.")
 
         role = discord.utils.get(server.roles, name="Guest")
-        channel = await self.bot.start_private_message(member)
         try:
-            await self.bot.send_message(channel, guest_rules + "\n" + commands_text + "\n" + credits_info)
+            await self.bot.send_message(member, guest_rules + "\n" + commands_text + "\n" + credits_info)
             await self.bot.say("{} Role Added to {}".format(role.name, member.display_name))
         except discord.errors.Forbidden:
             return await self.bot.say("Command failed, {} please fix your privacy settings, we are unable to send you Guest Rules.".format(member.mention))
