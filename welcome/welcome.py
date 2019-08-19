@@ -506,7 +506,7 @@ class welcome:
         self.auth = self.bot.get_cog( 'BrawlStats' ).auth
         self.tags = self.bot.get_cog( 'club' ).tags
         self.clubs = self.bot.get_cog( 'club' ).clubs
-        self.brawl = brawlstats.Client( self.auth.getBSToken(), is_async=False )
+        self.brawl = brawlstats.Client( self.auth.getToken(), is_async=False )
 
     def emoji(self, name):
         """Emoji by name."""
