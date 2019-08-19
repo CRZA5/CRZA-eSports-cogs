@@ -534,7 +534,7 @@ class welcome:
     async def change_message(self, user, new_embed, reactions: list = None):
         channel = await self.bot.start_private_message( user )
 
-        async for message in self.bot.logs_from( channel, limit=10 ):
+        async for message in self.bot.logs_from(channel, limit=1):
             if message.author.id == self.bot.user.id:
                 try:
                     await self.bot.delete_message( message )
@@ -542,11 +542,11 @@ class welcome:
                     pass
 
         try:
-            new_message = await self.bot.send_message( user, embed=new_embed )
+            new_message = await self.bot.send_message(user, embed=new_embed)
             for reaction in reactions:
-                await self.bot.add_reaction( new_message, reaction )
+                await self.bot.add_reaction(new_message, reaction)
         except discord.Forbidden:
-            await self.logger( user )
+            await self.logger(user)
 
         return new_message.id
 
