@@ -108,6 +108,9 @@ class tags:
 
     def __init__(self):
         self.tags_bs = dataIO.load_json(tags_path)
+    
+    async def update(self):
+        self.tags_bs = dataIO.load_json(tags_path)
 
     async def verifyTag(self, tag):
         """Check if a player/can tag is valid"""
@@ -289,9 +292,6 @@ class club:
 
     async def updateSeen(self):
         self.seen = dataIO.load_json('data/seen/seen.json')
-
-    async def updateauth(self):
-        self.auth = self.bot.get_cog('BrawlStats').auth
 
     def save_settings(self):
         """Saves the json"""
@@ -508,7 +508,7 @@ class club:
     async def approve(self, ctx, member: discord.Member, clubkey):
         """Send instructions to people joining a club"""
         server = ctx.message.server
-        await self.updateauth()
+        await self.tags.update()
 
         clubkey = clubkey.lower()
 
