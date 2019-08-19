@@ -290,6 +290,9 @@ class club:
     async def updateSeen(self):
         self.seen = dataIO.load_json('data/seen/seen.json')
 
+    async def updateauth(self):
+        self.auth = self.bot.get_cog('BrawlStats').auth
+
     def save_settings(self):
         """Saves the json"""
         dataIO.save_json('data/club/settings.json', self.settings)
@@ -505,6 +508,7 @@ class club:
     async def approve(self, ctx, member: discord.Member, clubkey):
         """Send instructions to people joining a club"""
         server = ctx.message.server
+        await self.updateauth()
 
         clubkey = clubkey.lower()
 
@@ -1142,8 +1146,6 @@ class club:
     @commands.has_any_role(*BOTCOMMANDER_ROLES)
     async def inactive(self, ctx, member: discord.Member):
         """Use this command after kicking people from club"""
-
-        server = ctx.message.server
 
         rolesToRemove = await self.clubs.rolesClubs()
 
