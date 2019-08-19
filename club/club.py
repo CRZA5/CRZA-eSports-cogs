@@ -103,48 +103,6 @@ tags_path = "data/brawlstats/tags.json"
 clubs_path = "data/club/clubs.json"
 
 
-class tags:
-    """Tags Management"""
-
-    def __init__(self):
-        self.tags_bs = dataIO.load_json(tags_path)
-    
-    async def update(self):
-        self.tags_bs = dataIO.load_json(tags_path)
-
-    async def verifyTag(self, tag):
-        """Check if a player/can tag is valid"""
-        check = ['P', 'Y', 'L', 'Q', 'G', 'R', 'J', 'C', 'U', 'V', '0', '2', '8', '9']
-
-        if any(i not in check for i in tag):
-            return False
-
-        return True
-
-    async def formatTag(self, tag):
-        """Sanitize and format CR Tag"""
-        return tag.strip('#').upper().replace('O', '0')
-        return True
-
-    async def formatName(self, name):
-        """Sanitize player Name"""
-        p = re.sub(r'<c\d>(.*)<\/c>', r'\1', name)
-        return p or name
-
-    async def getTag(self, userID):
-        """Get a user's BS Tag"""
-        return self.tags_bs[userID]['tag']
-
-    async def getUser(self, serverUsers, tag):
-        """Get User from BS Tag"""
-        for user in serverUsers:
-            if user.id in self.tags_bs:
-                player_tag = self.tags_bs[user.id]['tag']
-                if player_tag == await self.formatTag(tag):
-                    return user
-        return None
-
-
 class clubs:
     """BS Club Family Management"""
 
@@ -283,7 +241,7 @@ class club:
         self.bot = bot
         self.settings = dataIO.load_json('data/club/settings.json')
         self.auth = self.bot.get_cog('BrawlStats').auth
-        self.tags = tags()
+        self.tags = self.bot.get_cog('BrawlStats').tags
         self.clubs = clubs()
         self.brawl = brawlstats.Client(self.auth.getToken(), is_async=False)
         self.welcome = dataIO.load_json('data/club/welcome.json')
@@ -508,7 +466,6 @@ class club:
     async def approve(self, ctx, member: discord.Member, clubkey):
         """Send instructions to people joining a club"""
         server = ctx.message.server
-        await self.tags.update()
 
         clubkey = clubkey.lower()
 
@@ -617,7 +574,7 @@ class club:
                 embed.add_field(name="Club", value=club_name, inline=True)
                 embed.set_footer(text=credits, icon_url=creditIcon)
 
-                await self.bot.send_message(discord.Object(id='599824035391602688'), content=roleName.mention, embed=embed)
+                await self.bot.send_message(discord.Object(id='613064679538950144'), content=roleName.mention, embed=embed)
             except discord.errors.Forbidden:
                 await self.bot.say("Approval failed, {} please fix your privacy settings, we are unable to send you Direct Messages.".format(member.mention))
         else:
@@ -719,12 +676,11 @@ class club:
 
             await self._remove_roles(member, ['Guest'])
 
-            roleName = discord.utils.get(server.roles, name=role_names[0])
-            await self.bot.send_message(discord.Object(id='599824035391602688'),
+            await self.bot.send_message(discord.Object(id='613064679538950144'),
                                         "**{}** recruited **{} (#{})** to {}".format(ctx.message.author.display_name,
                                                                                      ign,
                                                                                      profiletag,
-                                                                                     roleName.mention))
+                                                                                     role_names[0]))
             await asyncio.sleep(300)
             await self.bot.send_message(member, rules_text)
 
