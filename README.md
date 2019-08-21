@@ -1,5 +1,5 @@
 Blazing Family Cogs
-https://i.imgur.com/5GfHj5o.png
+<img src="https://i.imgur.com/5GfHj5o.png">
 
 [<img src="https://discordapp.com/api/guilds/374596069989810176/widget.png?style=shield">](https://discord.gg/nnp9Zw5) [<img src="https://img.shields.io/badge/discord-py-blue.svg">](https://github.com/Rapptz/discord.py)
 
@@ -18,5 +18,6 @@ Check his repos for these cogs on public use- https://github.com/Weirdo914/Weird
 THanks RedJUMPMAN for race and heist and rr.(Although all the cogs have been greatly edited)
 ALso thanks to mybe useful cogs for leveler(Its unedited)
 
+#Credits
 [RED](https://github.com/Cog-Creators/Red-DiscordBot)
 [RedJumpman](https://github.com/RedJumpman)
