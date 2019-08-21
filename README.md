@@ -5,6 +5,8 @@ Blazing Family Cogs
 
 Made with Python and [RED](https://github.com/Cog-Creators/Red-DiscordBot).
 
+# If you want to see this bot in action, join the LeGeND Family Discord at [blazingfamily.com/discord](http://discord.gg/nnp9Zw5)
+
 # Private Use
 Cogs used by CRZAeSports for their server. If you want u can use but it has been modified according to our need.
 And all the cogs either belong or are edited by to Weirdo914.
