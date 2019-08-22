@@ -21,5 +21,9 @@ THanks RedJUMPMAN for race and heist and rr.(Although all the cogs have been gre
 ALso thanks to maybe useful cogs for leveler(Its unedited)
 
 #Credits
+
+
 [RED](https://github.com/Cog-Creators/Red-DiscordBot)
+
+
 [RedJumpman](https://github.com/RedJumpman)
