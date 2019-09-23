@@ -25,5 +25,6 @@ ALso thanks to maybe useful cogs for leveler(Its unedited)
 
 [RED](https://github.com/Cog-Creators/Red-DiscordBot)
 
+https://botbind.com/
 
 [RedJumpman](https://github.com/RedJumpman)
