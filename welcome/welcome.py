@@ -792,6 +792,7 @@ class welcome:
         server = member.server
         if server.id != "593732431551660063":
             return
+        await self.bot.send_message(server.get_channel("599821456578314251"), content="<:blazing:637530414398832640> welcome {} !  May i get your bs profile tag please? or you can do !bsave #TAG <:blazing:637530414398832640>".format(member.id))  # here also #invite-log
 
         self.joined.append( member.id )
 
