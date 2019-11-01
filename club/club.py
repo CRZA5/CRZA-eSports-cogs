@@ -243,7 +243,7 @@ class club:
         self.auth = self.bot.get_cog('BrawlStats').auth
         self.tags = self.bot.get_cog('BrawlStats').tags
         self.clubs = clubs()
-        self.brawl = brawlstats.Client(self.auth.getToken(), is_async=False)
+        self.brawl = brawlstats.BrawlAPI(self.auth.getToken(), is_async=False)
         self.welcome = dataIO.load_json('data/club/welcome.json')
         self.bank = dataIO.load_json('data/economy/bank.json')
         self.seen = dataIO.load_json('data/seen/seen.json')
