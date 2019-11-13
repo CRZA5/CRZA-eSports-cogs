@@ -15,8 +15,8 @@ import re
 
 creditIcon = "https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png"
 credits = "Bot by Weirdo914"
-BOTCOMMANDER_ROLES = ["Mod", "Club Manager",
-                      "Club Deputy", "Vice President", "Hub Officer", "Admin"]
+BOTCOMMANDER_ROLES = ["Mod", "Recruitment Manager",
+                      "President", "Vice President", "Hub Officer", "Admin"]
 
 rules_text = """**Here are some Blazing Family server rules.**\n
 • No Hateful, obscene, offensive, racist, sexual or violent words allowed in chat or images.
@@ -42,7 +42,6 @@ commands_text = """Here are some of the Blazing Family Bot commands, you can use
 **!buy** - Take a look at what you can purchase with your credits.
 **!balance** - To check your current bank balance.
 **!profile** - view your server profile.
-**!deck** - make and save your deck.
 **!rep @user** - give reputation points to users.
 **!remindme** - Use this command to make the bot remind you of something in the future.
 **!trivia** - start a trivia of your choice. Bot will ask you questions, you will get points of answering them.
@@ -61,22 +60,24 @@ info_text = """You will find several channels on our Discord Server\n
 **#challenges**: Word and number challenge games with other members. Answer all the questions before any one else to win.
 """
 
-credits_info = """**WHAT ARE CREDITS?**
-Credits are a virtual currency in LeGeND Discord, you earn credits by playing in and playing mini games in discord. To use your credits, you can buy items using !buy.
+credits_info = """WHAT ARE CREDITS? 
+**Credits are a virtual currency in discord server, you earn credits by playing  playing mini games in discord. To use your credits, you can buy items from #shop
 
-• Every 30 minutes, you can get free credits by typing !payday in #bot-spam channel.
-• You can also win credits by playing #heist and #challenges.
+• Every 30 minutes, you can get free credits by typing !payday in #bot-spam  channel. Rare, Epic,  and Legendary gets More.!!
+• You can also win credits by playing  and #race #challenges #heist .
 • Last but not least, you can get easy credits by just chatting on discord. The more you chat, the more credits you accumulate.
 
-You can type !buy here to look at different ways you can spend these credits.
+You can type !shop here to look at different ways you can spend these credits. **
 """
 
-coc_bs = """We Also Do Coc, and Cr Tourneys in our server! 
+coc_bs = """We Also Do ClashOfClans, and ClashRoyale Tourneys in our server! 
 """
 
 social_info = """Stay Social! Come and follow us on these platforms to stay up to date on the latest news and announcements.
 
 https://twitter.com/BlazingFamily
+https://invite.gg/BlazingFamily
+https://discord.me/Blazing
 
 """
 
@@ -86,7 +87,7 @@ guest_rules = """Welcome to the **Blazing Family** Discord server.At first pleas
 • This is an English only server, please use any other languages in a private message.
 • Do not spam, and avoid ever using @clubname without permission from club managers or deputies.
 • No advertisement of any kind, e.g. clubs, websites, discord invites, etc.
-• Use #bot-spam for bot features, e.g. !deck or !payday.
+• Use #bot-spam for bot features, e.g. !payday.
 • Respect and do not subvert moderators or managers.
 • A good rule is to talk to people as if you were talking to them face to face.
 
@@ -94,7 +95,7 @@ Failure to follow these rules will get you kicked from the server. Repeat offend
 
 You can chat with family members and guests in `#global-chat`. For games, you can check out `#heist` and `#challenges`.
 
-If you would like to invite your friends to join this server, you may use this Discord invite: <https://discord.gg/EjpjMR8>
+If you would like to invite your friends to join this server, you may use this Discord invite: <https://invite.gg/BlazingFamily>
 
 Thanks + enjoy!
 """
