@@ -373,11 +373,11 @@ class club:
         embed = discord.Embed(color=0xFAA61A)
         if "url" in self.settings and "family" in self.settings:
             embed.set_author(name=self.settings['family'], url=self.settings['url'],
-                             icon_url="https://i.imgur.com/a/mczjGQh.jpg")
+                             icon_url="https://i.imgur.com/wcxGDN0.jpg")
         else:
             embed.set_author(name="Blazing Family Clubs",
                              url="https://discord.me/bsindia",
-                             icon_url="https://i.imgur.com/a/mczjGQh.jpg")
+                             icon_url="https://i.imgur.com/wcxGDN0.jpg")
 
         embed.set_footer(text=credits, icon_url=creditIcon)
 
