@@ -18,7 +18,7 @@ credits = "Bot by Blazing Family"
 BOTCOMMANDER_ROLES = ["Mod", "Recruitment Manager",
                       "President", "Vice President", "Hub Officer", "Admin"]
 
-rules_text = """**Here are some Blazing Family server rules.**\n
+rules_text = """Take your roles from #react-role \n **Here are some Blazing Family server rules.**\n
 • No Hateful, obscene, offensive, racist, sexual or violent words allowed in chat or images.
 • Respect others' opinions. If you disagree, please do so in a constructive manner.
 • This is an English only server, please use any other languages in a private message.
@@ -70,7 +70,7 @@ credits_info = """WHAT ARE CREDITS?
 You can type !shop here to look at different ways you can spend these credits. **
 """
 
-coc_bs = """We Also Do ClashOfClans, and ClashRoyale Tourneys in our server! 
+coc_bs = """We Also Do ClashOfClans, and ClashRoyale Tourneys in our server! take your roles from #react-role
 """
 
 social_info = """Stay Social! Come and follow us on these platforms to stay up to date on the latest news and announcements.
@@ -81,7 +81,7 @@ https://discord.me/Blazing
 
 """
 
-guest_rules = """Welcome to the **Blazing Family** Discord server.At first please take your roles from #react-role in server!  As a guest, you agree to the following rules:
+guest_rules = """Take your roles from #react-role \n Welcome to the **Blazing Family** Discord server.At first please take your roles from #react-role in server!  As a guest, you agree to the following rules:
 
 • Respect others' opinions. If you disagree, please do so in a constructive manner.
 • This is an English only server, please use any other languages in a private message.
@@ -1086,7 +1086,7 @@ class club:
         role = discord.utils.get(server.roles, name="Guest")
         channel = await self.bot.start_private_message(member)
         try:
-            message = guest_rules + "\n" + credits_info "\n" + commands_text "\n" + info_text "\n" + coc_bs "\n" + social_info
+            message = guest_rules + "\n" + credits_info
             await self.bot.send_message(channel, message)
             await self.bot.send_message(channel, commands_text)
             await self.bot.say("{} Role Added to {}".format(role.name, member.display_name))
