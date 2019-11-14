@@ -13,8 +13,8 @@ from cogs.utils.chat_formatting import pagify
 import re
 
 
-creditIcon = "https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png"
-credits = "Bot by Weirdo914"
+creditIcon = "https://i.imgur.com/wcxGDN0.jpg"
+credits = "Bot by Blazing Family"
 BOTCOMMANDER_ROLES = ["Mod", "Recruitment Manager",
                       "President", "Vice President", "Hub Officer", "Admin"]
 
