@@ -14,8 +14,8 @@ from __main__ import send_cmd_help
 from .utils import checks
 from .utils.dataIO import dataIO
 
-creditIcon = "https://i.imgur.com/YqLKAzg.png"
-credits = "Bot By Crza Esports"
+creditIcon = "https://i.imgur.com/wcxGDN0.jpg"
+credits = "Bot By Blazing Family"
 
 animals = ((':rabbit2:', 'fast'), (':monkey:', 'fast'), (':cat2:', 'fast'), (':mouse2:', 'slow'),
            (':chipmunk:', 'fast'), (':rat:', 'fast'), (':dove:', 'fast'), (':bird:', 'fast'),
