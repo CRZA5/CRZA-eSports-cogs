@@ -11,7 +11,7 @@ import asyncio
 def embed(**kwargs):
     return discord.Embed( **kwargs ).set_footer(
         text="Blazing Family",
-        icon_url="https://i.imgur.com/5GfHj5o.png"
+        icon_url="https://i.imgur.com/wcxGDN0.jpg"
     )
 
 
@@ -30,12 +30,12 @@ class Symbol:
 dm_menu = {
     "main": {
         "embed": embed( title="Welcome", color=discord.Color.orange(),
-                        description="Welcome to the **BrawlStars** Server, {0.mention}! "
-                                    "We are one of the families in Brawl Stars"
+                        description="Welcome to the **BlazingFamily - BrawlStars** Server, {0.mention}! "
+                                    "We are one of the club families in Brawl Stars"
 
                                     "We are glad you joined us, can we ask a few questions "
                                     "to customize your experience?" ),
-        "thumbnail": "https://i.imgur.com/5GfHj5o.png",
+        "thumbnail": "https://i.imgur.com/wcxGDN0.jpg",
         "options": [
             {
                 "name": "Yes please!",
@@ -139,7 +139,7 @@ dm_menu = {
                 }
             },
             {
-                "name": "Northern Africa",
+                "name": "India",
                 "emoji": Letter.c,
                 "execute": {
                     "menu": "age_menu"
@@ -281,9 +281,9 @@ dm_menu = {
     },
     "save_tag": {
         "embed": embed( title="Type in your tag", color=discord.Color.orange(),
-                        description="Please type **!bs save #YOURTAG** below to submit your ID.\n\n"
+                        description="Please type **!bsave #YOURTAG** below to submit your ID.\n\n"
                                     "You can find your player tag in your profile in game." ),
-        "image": "https://i.imgur.com/5GfHj5o.png",
+        "image": "https://i.imgur.com/wcxGDN0.jpg",
         "options": [],
         "go_back": True
     },
@@ -365,7 +365,7 @@ dm_menu = {
     },
     "end_guest": {
         "embed": embed( title="Enjoy your stay", color=discord.Color.orange(),
-                        description="Welcome to the **BrawlStars** Discord server. "
+                        description="Welcome to the **Blazing Family - BrawlStars** Discord server. "
                                     "As a guest, you agree to the following rules:\n\n"
                                     "• Respect others' opinions. If you disagree, please do so "
                                     "in a constructive manner.\n• This is an English only server, "
