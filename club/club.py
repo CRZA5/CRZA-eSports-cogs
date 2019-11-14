@@ -1086,7 +1086,7 @@ class club:
         role = discord.utils.get(server.roles, name="Guest")
         channel = await self.bot.start_private_message(member)
         try:
-            message = guest_rules + "\n" + credits_info
+            message = guest_rules + "\n" + credits_info "\n" + commands_text "\n" + info_text "\n" + coc_bs "\n" + social_info
             await self.bot.send_message(channel, message)
             await self.bot.send_message(channel, commands_text)
             await self.bot.say("{} Role Added to {}".format(role.name, member.display_name))
