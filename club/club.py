@@ -569,7 +569,7 @@ class club:
                 roleName = discord.utils.get(server.roles, name=club_role)
 
                 embed = discord.Embed(color=0x0080ff)
-                embed.set_author(name="New Recruit", icon_url="https://i.imgur.com/5GfHj5o.png")
+                embed.set_author(name="New Recruit", icon_url="https://i.imgur.com/wcxGDN0.jpg")
                 embed.add_field(name="Name", value=ign, inline=True)
                 embed.add_field(name="Recruit Code", value=recruitCode, inline=True)
                 embed.add_field(name="Club", value=club_name, inline=True)
