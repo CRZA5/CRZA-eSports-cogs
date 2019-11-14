@@ -15,8 +15,8 @@ except Exception as e:
     raise RuntimeError("You must run `pip3 install tabulate`.") from e
 
 PATH = 'data/fmod/'
-creditIcon = "https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png"
-credits = "Bot by Crza Esports"
+creditIcon = "https://i.imgur.com/wcxGDN0.jpg"
+credits = "Bot by Blazing Family "
 
 # stuff for mute time
 UNIT_TABLE = {'s': 1, 'm': 60, 'h': 60 * 60, 'd': 60 * 60 * 24}
