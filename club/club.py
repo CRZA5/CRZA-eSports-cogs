@@ -393,7 +393,8 @@ class club:
             numWaiting = await self.clubs.numWaiting(clubkey)
             personalbest = await self.clubs.getClubData(clubkey, 'personalbest')
             bonustitle = await self.clubs.getClubData(clubkey, 'bonustitle')
-            emoji = self.emoji("gameroom")
+            emojiName = await self.clubs.getClubData(clubkey, 'emoji1')
+            emoji = self.emoji(emojiName or "gameroom")
             totalWaiting += numWaiting
 
             if numWaiting > 0:
