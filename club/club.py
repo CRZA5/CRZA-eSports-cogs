@@ -76,12 +76,12 @@ coc_bs = """We Also Do ClashOfClans, and ClashRoyale Tourneys in our server! tak
 social_info = """Stay Social! Come and follow us on these platforms to stay up to date on the latest news and announcements.
 
 https://twitter.com/MysticIndia19
-https://invite.gg/BlazingFamily
-https://discord.me/Blazing
+https://invite.gg/MysticIndia
+https://discord.me/mysticindia
 
 """
 
-guest_rules = """Take your roles from #react-role \n Welcome to the **Blazing Family** Discord server.At first please take your roles from #react-role in server!  As a guest, you agree to the following rules:
+guest_rules = """Take your roles from #react-role \n Welcome to the **Mystic India** Discord server. At first please take your roles from #react-role in server!  As a guest, you agree to the following rules:
 
 • Respect others' opinions. If you disagree, please do so in a constructive manner.
 • This is an English only server, please use any other languages in a private message.
@@ -95,7 +95,7 @@ Failure to follow these rules will get you kicked from the server. Repeat offend
 
 You can chat with family members and guests in `#global-chat`. For games, you can check out `#heist` and `#challenges`.
 
-If you would like to invite your friends to join this server, you may use this Discord invite: <https://invite.gg/BlazingFamily>
+If you would like to invite your friends to join this server, you may use this Discord invite: <https://invite.gg/MysticIndia>
 
 Thanks + enjoy!
 """
@@ -373,11 +373,11 @@ class club:
         embed = discord.Embed(color=0xFAA61A)
         if "url" in self.settings and "family" in self.settings:
             embed.set_author(name=self.settings['family'], url=self.settings['url'],
-                             icon_url="https://i.imgur.com/wcxGDN0.jpg")
+                             icon_url="https://i.imgur.com/IBHnMxt.jpg")
         else:
-            embed.set_author(name="Blazing Family Clubs",
+            embed.set_author(name="Mystic India Clubs",
                              url="https://discord.me/bsindia",
-                             icon_url="https://i.imgur.com/wcxGDN0.jpg")
+                             icon_url="https://i.imgur.com/IBHnMxt.jpg")
 
         embed.set_footer(text=credits, icon_url=creditIcon)
 
