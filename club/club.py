@@ -14,11 +14,11 @@ import re
 
 
 creditIcon = "https://i.imgur.com/wcxGDN0.jpg"
-credits = "Bot by Blazing Family"
+credits = "Bot by Mystic India"
 BOTCOMMANDER_ROLES = ["Mod", "Recruitment Manager",
                       "President", "Vice President", "Hub Officer", "Admin"]
 
-rules_text = """Take your roles from #react-role \n **Here are some Blazing Family server rules.**\n
+rules_text = """Take your roles from #react-role \n **Here are some Mystic India server rules.**\n
 • No Hateful, obscene, offensive, racist, sexual or violent words allowed in chat or images.
 • Respect others' opinions. If you disagree, please do so in a constructive manner.
 • This is an English only server, please use any other languages in a private message.
@@ -30,12 +30,12 @@ rules_text = """Take your roles from #react-role \n **Here are some Blazing Fami
 • A good rule is to talk to people as if you were talking to them face to face.
 • There are more rules that vary from club to club. Ask your club leader for the rules of your club.\n
 **Club Transfer**\n
-• If you are transferring from one Blazing  Family club to another, please contact your destination club's club leader first, 
+• If you are transferring from one Mystic India club to another, please contact your destination club's club leader first, 
 and wait for the all clear from that club leader. We are all for members being wherever they want to be, but it helps us keep track of what is going on, and helps us make sure you get accepted.
 • If you are leaving the club for another reason, please talk with your leader first when possible. As a club leader it helps to know if you're leaving for good, if you're leaving to do 2v2 with a few friends for a while, or if you're leaving for an eSport event.\n
 **Violation of these roles will lead to punishment including temporary guest role reduced access, temporary kick from server, or permanent kick from server, depending on the severity and/or frequency of the offense**"""
 
-commands_text = """Here are some of the Blazing Family Bot commands, you can use them in the #bot-spam channel.\n
+commands_text = """Here are some of the Mystic India Bot commands, you can use them in the #bot-spam channel.\n
 **!bs profile** - to view your brawl stars stats.
 **!payday** - receive your 300 credits every 30 minutes.
 **!heist** - Play a heist with a crew in #heist channel.
@@ -75,7 +75,7 @@ coc_bs = """We Also Do ClashOfClans, and ClashRoyale Tourneys in our server! tak
 
 social_info = """Stay Social! Come and follow us on these platforms to stay up to date on the latest news and announcements.
 
-https://twitter.com/BlazingFamily
+https://twitter.com/MysticIndia19
 https://invite.gg/BlazingFamily
 https://discord.me/Blazing
 
