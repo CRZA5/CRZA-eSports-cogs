@@ -373,11 +373,11 @@ class club:
         embed = discord.Embed(color=0xFAA61A)
         if "url" in self.settings and "family" in self.settings:
             embed.set_author(name=self.settings['family'], url=self.settings['url'],
-                             icon_url="https://i.imgur.com/IBHnMxt.jpg")
+                             icon_url="https://cdn.discordapp.com/attachments/637620236161646592/645638378963861506/PicsArt_11-17-02.18.34.png")
         else:
             embed.set_author(name="Mystic India Clubs",
                              url="https://discord.me/bsindia",
-                             icon_url="https://i.imgur.com/IBHnMxt.jpg")
+                             icon_url="https://cdn.discordapp.com/attachments/637620236161646592/645638378963861506/PicsArt_11-17-02.18.34.png")
 
         embed.set_footer(text=credits, icon_url=creditIcon)
 
@@ -570,7 +570,7 @@ class club:
                 roleName = discord.utils.get(server.roles, name=club_role)
 
                 embed = discord.Embed(color=0x0080ff)
-                embed.set_author(name="New Recruit", icon_url="https://i.imgur.com/wcxGDN0.jpg")
+                embed.set_author(name="New Recruit", icon_url="https://cdn.discordapp.com/attachments/637620236161646592/645638378963861506/PicsArt_11-17-02.18.34.png")
                 embed.add_field(name="Name", value=ign, inline=True)
                 embed.add_field(name="Recruit Code", value=recruitCode, inline=True)
                 embed.add_field(name="Club", value=club_name, inline=True)
