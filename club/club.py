@@ -13,7 +13,7 @@ from cogs.utils.chat_formatting import pagify
 import re
 
 
-creditIcon = "https://i.imgur.com/IBHnMxt.jpg"
+creditIcon = "https://cdn.discordapp.com/attachments/637620236161646592/645638378963861506/PicsArt_11-17-02.18.34.png"
 credits = "Bot by Mystic India"
 BOTCOMMANDER_ROLES = ["Mod", "Recruitment Manager",
                       "President", "Vice President", "Hub Officer", "Admin"]
