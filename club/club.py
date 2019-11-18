@@ -52,7 +52,8 @@ commands_text = """Here are some of the Mystic India Bot commands, you can use t
 
 info_text = """You will find several channels on our Discord Server\n
 **#global-chat**: to discuss about the game.
-**#news**: important info about family.
+**profilepic-request**- You can buy or request a profile picture!
+**#news**: important info and news about family.
 **#react-role**: Easily get your notification and archetype roles.
 **#giveaways**: Win Discord credits and game keys every day.
 **#bots-spam**: Use bot commands, You can mute the channels you don't need in DISCORD settings.
@@ -63,7 +64,7 @@ info_text = """You will find several channels on our Discord Server\n
 credits_info = """WHAT ARE CREDITS? 
 **Credits are a virtual currency in discord server, you earn credits by playing  playing mini games in discord. To use your credits, you can buy items from #shop
 
-• Every 30 minutes, you can get free credits by typing !payday in #bot-spam  channel. Rare, Epic,  and Legendary gets More.!!
+• Every 25 minutes, you can get free credits by typing !payday in #bot-spam  channel. Rare, Epic,  and Legendary gets More.!!
 • You can also win credits by playing  and #race #challenges #heist .
 • Last but not least, you can get easy credits by just chatting on discord. The more you chat, the more credits you accumulate.
 
