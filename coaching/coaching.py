@@ -4,8 +4,8 @@ import asyncio
 
 BOTCOMMANDER_ROLES = ["Mod", "admin", "Member"]
 
-icon = "https://i.imgur.com/YqLKAzg.png"
-credit = "Bot by CRZA eSports"
+icon = "https://cdn.discordapp.com/attachments/637620236161646592/645638378963861506/PicsArt_11-17-02.18.34.png"
+credit = "Bot by Mystic India"
 
 class coaching:
   
@@ -26,8 +26,8 @@ class coaching:
 
         user = ctx.message.author
         channel = await self.bot.start_private_message(user)
-        channel_req = self.bot.get_channel("588659301833375744")
-        server_req = self.bot.get_server("567325025649033236")
+        channel_req = self.bot.get_channel("611879761895227402")
+        server_req = self.bot.get_server("593732431551660063")
         coach_role = discord.utils.get(server_req.roles, name="Coach")
 
         await self.bot.send_message(ctx.message.channel, msg_start)
