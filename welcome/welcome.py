@@ -10,8 +10,8 @@ import asyncio
 
 def embed(**kwargs):
     return discord.Embed( **kwargs ).set_footer(
-        text="Blazing Family",
-        icon_url="https://i.imgur.com/wcxGDN0.jpg"
+        text="Mystic India",
+        icon_url="https://cdn.discordapp.com/attachments/637620236161646592/645638378963861506/PicsArt_11-17-02.18.34.png"
     )
 
 
@@ -30,8 +30,8 @@ class Symbol:
 dm_menu = {
     "main": {
         "embed": embed( title="Welcome", color=discord.Color.orange(),
-                        description="Welcome to the **BlazingFamily - BrawlStars** Server, {0.mention}! "
-                                    "We are one of the club families in Brawl Stars"
+                        description="Welcome to the **Mystic India - BrawlStars** Server, {0.mention}! "
+                                    "We are the Indian Branch of Mystic eSports in Brawl Stars"
 
                                     "We are glad you joined us, can we ask a few questions "
                                     "to customize your experience?" ),
@@ -365,7 +365,7 @@ dm_menu = {
     },
     "end_guest": {
         "embed": embed( title="Enjoy your stay", color=discord.Color.orange(),
-                        description="Welcome to the **Blazing Family - BrawlStars** Discord server. "
+                        description="Welcome to the **Mystic India - BrawlStars** Discord server. "
                                     "As a guest, you agree to the following rules:\n\n"
                                     "• Respect others' opinions. If you disagree, please do so "
                                     "in a constructive manner.\n• This is an English only server, "
@@ -438,7 +438,7 @@ dm_menu = {
     "leave_alone": {
         "embed": embed( title="Enjoy your stay", color=discord.Color.orange(),
                         description="We look forward to welcoming "
-                                    "you into the Blazing Family Server!\n\n"
+                                    "you into the Mystic India Server!\n\n"
                                     "You can go talk to an officer in #welcome-gate. " ),
         "options": [
             {
@@ -453,7 +453,7 @@ dm_menu = {
         "finished": True
     },
     "clash_royale": {
-        "embed": embed( title="Blazing Family", color=discord.Color.orange(),
+        "embed": embed( title="Mystic India", color=discord.Color.orange(),
                         description="Guess what, we have just the right server for you.\n\n"
                                     "Click here to join: https://discord.gg/nnp9Zw5" ),
         "options": [
@@ -792,7 +792,7 @@ class welcome:
         server = member.server
         if server.id != "593732431551660063":
             return
-        await self.bot.send_message(server.get_channel("599821456578314251"), content="<:blazing:637530414398832640> ** welcome <@{}> !  May i get your bs profile tag please? or you can do !bsave #TAG ,You can also check #tournament-info to enter any tournament by doing  `!register` in #tournament-lobby. If there is no channel named those, that means there is no tournament running  at this moment. If you dont play brawlstars then check #auto-roles to get other game roles!** <:blazing:637530414398832640> ".format(member.id))  # here also #invite-log
+        await self.bot.send_message(server.get_channel("599821456578314251"), content="<:MI:645887385455951883> ** welcome <@{}> !  May i get your bs profile tag please? or you can do !bsave #TAG ,You can also check #tournament-info to enter any tournament by doing  `!register` in #tournament-lobby. If there is no channel named those, that means there is no tournament running  at this moment. If you dont play brawlstars then check #auto-roles to get other game roles!** <:MI:645887385455951883> ".format(member.id))  # here also #invite-log
 
         self.joined.append( member.id )
 
