@@ -35,7 +35,7 @@ dm_menu = {
 
                                     "We are glad you joined us, can we ask a few questions "
                                     "to customize your experience?" ),
-        "thumbnail": "https://i.imgur.com/wcxGDN0.jpg",
+        "thumbnail": "https://cdn.discordapp.com/attachments/637620236161646592/645638378963861506/PicsArt_11-17-02.18.34.png",
         "options": [
             {
                 "name": "Yes please!",
