@@ -19,10 +19,10 @@ from __main__ import send_cmd_help
 from tabulate import tabulate
 
 
-creditIcon = "https://i.imgur.com/YqLKAzg.png"
-credits = "Bot By Crza Esports"
+creditIcon = "https://cdn.discordapp.com/attachments/637620236161646592/645638378963861506/PicsArt_11-17-02.18.34.png"
+credits = "Bot By Mystic India"
 
-BOTCOMMANDER_ROLES = ["Family Representative", "Clan Manager", "admin", "Heist Manager", "admin"]
+BOTCOMMANDER_ROLES = ["Family Representative", "Clan Manager", "Admin", "Heist Manager", "admin"]
 
 
 # Thanks stack overflow http://stackoverflow.com/questions/21872366/plural-string-formatting
