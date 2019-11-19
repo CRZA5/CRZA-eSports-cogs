@@ -792,7 +792,7 @@ class welcome:
         server = member.server
         if server.id != "593732431551660063":
             return
-        await self.bot.send_message(server.get_channel("599821456578314251"), content="<:MI:646313129340436480> ** welcome <@{}> !  May i get your bs profile tag please? or you can do !bsave #TAG ,You can also check #tournament-info to enter any tournament by doing  `!register` in #tournament-lobby. If there is no channel named those, that means there is no tournament running  at this moment. If you dont play brawlstars then check #auto-roles to get other game roles!** <:MI:646313129340436480> ".format(member.id))  # here also #invite-log
+        await self.bot.send_message(server.get_channel("599821456578314251"), content=" :MI: ** welcome <@{}> !  May i get your bs profile tag please? or you can do !bsave #TAG ,You can also check #tournament-info to enter any tournament by doing  `!register` in #tournament-lobby. If there is no channel named those, that means there is no tournament running  at this moment. If you dont play brawlstars then check #auto-roles to get other game roles!** :MI: ".format(member.id))  # here also #invite-log
 
         self.joined.append( member.id )
 
