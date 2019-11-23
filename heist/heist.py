@@ -563,7 +563,7 @@ class Heist:
         wait_time = settings["Config"]["Wait Time"]
         heist_role = discord.utils.get(server.roles, name="Heist")
         heist_channel = discord.utils.get(ctx.message.server.channels, name="heist")
-        heistPlan_channl = discord.Object(id='567403926257926172')
+        heistPlan_channl = discord.Object(id='647749442966913034')
 
         await self.bot.edit_role(server, heist_role, mentionable=True)
         await self.bot.send_message(heistPlan_channl, ("**Weekly Grand** {} "
