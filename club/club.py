@@ -679,7 +679,7 @@ class club:
 
             await self._remove_roles(member, ['Guest'])
 
-            await self.bot.send_message(discord.Object(id='613064679538950144'),
+            await self.bot.send_message(discord.Object(id='647772268134400012'),
                                         "**{}** recruited **{} (#{})** to {}".format(ctx.message.author.display_name,
                                                                                      ign,
                                                                                      profiletag,
