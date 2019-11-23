@@ -577,7 +577,7 @@ class club:
                 embed.add_field(name="Club", value=club_name, inline=True)
                 embed.set_footer(text=credits, icon_url=creditIcon)
 
-                await self.bot.send_message(discord.Object(id='613064679538950144'), content=roleName.mention, embed=embed)
+                await self.bot.send_message(discord.Object(id='647772268134400012'), content=roleName.mention, embed=embed)
             except discord.errors.Forbidden:
                 await self.bot.say("Approval failed, {} please fix your privacy settings, we are unable to send you Direct Messages.".format(member.mention))
         else:
