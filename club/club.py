@@ -329,13 +329,12 @@ class club:
 
     @commands.group(pass_context=True, no_pm=True, name="brawl")
     async def _brawl(self, ctx):
-        """Legend BS cog's group command"""
+        """Mystic BS cog's group command"""
 
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
 
     @_brawl.command(pass_context=True)
-    async def legend(self, ctx, member: discord.Member=None):
         """ Show BrawlStars India clubs, can also show clubs based on a member's trophies"""
 
         await self.bot.type()
@@ -437,7 +436,7 @@ class club:
         if not foundClub:
             embed.add_field(name="uh oh!",
                             value="There are no clubs available for you at the moment, "
-                            "please type !legend to see all clubs.",
+                            "please type !mystic to see all clubs.",
                             inline=False)
 
         embed.description = ("Our Family is made up of {} "
@@ -632,7 +631,7 @@ class club:
                 if invite is not None:
                     joinLink = "https://discord.gg/" + str(invite)
                     await self.bot.send_message(member, "Hi There! Congratulations on getting accepted into our family. " +
-                                                        "We have unlocked all the member channels for you in Legend Brawl Stars Discord Server. " +
+                                                        "We have unlocked all the member channels for you in Mystic Brawl Stars Discord Server. " +
                                                         "Now you have to carefuly read this message and follow the steps mentioned below: \n\n" +
                                                         "Please click on the link below to join your club Discord server. \n\n" +
                                                         clubname + ": " + joinLink + "\n\n" +
@@ -640,7 +639,7 @@ class club:
                 else:
 
                     await self.bot.send_message(member, "Hi There! Congratulations on getting accepted into our family. "
-                                                        "We have unlocked all the member channels for you in Legend Brawl Stars Discord Server. \n\n" +
+                                                        "We have unlocked all the member channels for you in Mystic Brawl Stars Discord Server. \n\n" +
                                                         "Please do not leave our Discord server while you are in the club. Thank you.")
             except discord.errors.Forbidden:
                 return await self.bot.say(("Membership failed, {} please fix your privacy settings, "
@@ -1008,7 +1007,7 @@ class club:
                 bs_members_with_less_trophies.append(bs_members_name[index])
 
         bs_clubSettings.append(clubdata.badge_id == 4)
-        bs_clubSettings.append("<c7>Legend Family</c> :fire: <c5>discord.gg/5ww5D3q</c> :fire: <c3>2 Clubs</c> :fire: <c8>Discord is mandatory</c> :fire:" in clubdata.description)
+        bs_clubSettings.append("<c7>Mystic Family</c> :fire: <c5>discord.gg/5ww5D3q</c> :fire: <c3>2 Clubs</c> :fire: <c8>Discord is mandatory</c> :fire:" in clubdata.description)
         bs_clubSettings.append(clubdata.type != "Closed")
 
         message = ""
