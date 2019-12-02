@@ -335,7 +335,7 @@ class club:
             await send_cmd_help(ctx)
 
     @_brawl.command(pass_context=True)
-        """ Show BrawlStars India clubs, can also show clubs based on a member's trophies"""
+        """Show BrawlStars India clubs, can also show clubs based on a member's trophies"""
 
         await self.bot.type()
         if member is None:
