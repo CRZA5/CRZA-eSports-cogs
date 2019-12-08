@@ -26,7 +26,7 @@ class coaching:
 
         user = ctx.message.author
         channel = await self.bot.start_private_message(user)
-        channel_req = self.bot.get_channel("611879761895227402")
+        channel_req = self.bot.get_channel("653112566314303539")
         server_req = self.bot.get_server("593732431551660063")
         coach_role = discord.utils.get(server_req.roles, name="Coach")
 
