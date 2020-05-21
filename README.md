@@ -5,7 +5,7 @@ CRZA Esports Cogs
 
 Made with Python and [RED](https://github.com/Cog-Creators/Red-DiscordBot).
 
-# If you want to see this bot in action, join the Blazing Family Discord at [CRZAEsports.in/discord](http://discord.gg/nnp9Zw5)
+# If you want to see this bot in action, join the CRZA Esports Discord at [CRZAEsports.in/discord](http://discord.gg/nnp9Zw5)
 
 # Private Use
 Cogs used by CRZA Esports for their server. If you want u can use but you need to take permission from us! to get permission join our server, scroll up, there is the server invite link. it has been modified according to our need.
